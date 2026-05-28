@@ -338,86 +338,18 @@
     }
     .about-visual {
       position: relative;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-    /* gold radial glow behind photo */
-    .about-visual::before {
-      content: '';
-      position: absolute;
-      width: 300px; height: 300px;
-      background: radial-gradient(circle, rgba(201,168,76,0.13) 0%, transparent 70%);
-      top: 30%; left: 50%;
-      transform: translate(-50%, -50%);
-      border-radius: 50%;
-      pointer-events: none;
-      z-index: 0;
-    }
-    /* subtle dot-grid pattern */
-    .about-visual::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: radial-gradient(circle, rgba(201,168,76,0.18) 1px, transparent 1px);
-      background-size: 22px 22px;
-      opacity: 0.35;
-      z-index: 0;
-      pointer-events: none;
-      -webkit-mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 80%);
-      mask-image: radial-gradient(ellipse 80% 80% at 50% 50%, black 40%, transparent 80%);
     }
     .about-photo-wrap {
       position: relative;
       width: 100%;
-      z-index: 1;
-      max-height: 360px;
-      overflow: hidden;
     }
     .about-photo {
-      position: relative;
-      z-index: 1;
       width: 100%;
       display: block;
       border-radius: var(--radius);
-      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 5%, black 75%, transparent 100%);
-      mask-image: linear-gradient(to bottom, transparent 0%, black 5%, black 75%, transparent 100%);
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 6%, black 76%, transparent 100%);
+      mask-image: linear-gradient(to bottom, transparent 0%, black 6%, black 76%, transparent 100%);
       filter: contrast(1.02) brightness(1.03);
-    }
-    /* floating credential badges */
-    .about-float {
-      position: absolute;
-      z-index: 3;
-      display: flex;
-      align-items: center;
-      gap: 8px;
-      background: rgba(10,22,40,0.88);
-      border: 1px solid rgba(201,168,76,0.3);
-      border-radius: 10px;
-      padding: 9px 14px;
-      backdrop-filter: blur(8px);
-      -webkit-backdrop-filter: blur(8px);
-      white-space: nowrap;
-    }
-    .about-float svg { flex-shrink: 0; }
-    .about-float span {
-      font-size: 0.76rem;
-      font-weight: 600;
-      letter-spacing: 0.05em;
-      color: var(--white);
-    }
-    .about-float strong {
-      color: var(--gold);
-      display: block;
-      font-size: 0.7rem;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-    }
-    .about-float-tl {
-      top: 16px; left: -20px;
-    }
-    .about-float-br {
-      bottom: 60px; right: -20px;
     }
     .about-tags {
       display: flex;
@@ -1056,9 +988,7 @@
       .contact-grid { grid-template-columns: 1fr; gap: 40px; }
       .about-visual { order: -1; }
       .about-photo-wrap { max-width: 100%; width: 100%; margin: 0 auto; }
-      .about-photo-wrap::after { display: none; }
-      .about-float { display: none; }
-      .about-visual::before, .about-visual::after { display: none; }
+      .about-photo-wrap { max-width: 100%; width: 100%; }
       .stat-item:not(:last-child)::after { display: none; }
     }
     @media (max-width: 768px) {
@@ -1179,16 +1109,8 @@
         </div>
       </div>
       <div class="about-visual fade-in">
-        <div class="about-float about-float-tl">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2.2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
-          <div><strong>AMFI Registered</strong><span>ARN-346031</span></div>
-        </div>
         <div class="about-photo-wrap">
           <img src="picture.png" alt="Tilak Chandra Shastri — AMFI Registered MFD" class="about-photo" />
-        </div>
-        <div class="about-float about-float-br">
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="var(--gold)" stroke-width="2.2"><polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/><polyline points="17 6 23 6 23 12"/></svg>
-          <div><strong>Experience</strong><span>5+ Yrs in Markets</span></div>
         </div>
       </div>
     </div>

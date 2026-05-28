@@ -338,35 +338,70 @@
     }
     .about-visual {
       position: relative;
+      display: flex;
+      justify-content: center;
     }
-    .about-card {
-      background: var(--navy3);
-      border: 1px solid rgba(201,168,76,0.15);
-      border-radius: var(--radius);
-      padding: 40px;
+    .about-photo-wrap {
       position: relative;
-      overflow: hidden;
+      max-width: 360px;
+      width: 100%;
     }
-    .about-card::before {
+    /* gold offset frame behind the photo */
+    .about-photo-wrap::before {
       content: '';
       position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, var(--gold), transparent);
+      top: 32px; left: -20px; right: 20px; bottom: -20px;
+      border: 1.5px solid rgba(201,168,76,0.35);
+      border-radius: var(--radius);
+      background: rgba(201,168,76,0.04);
     }
-    .about-card-quote {
-      font-family: var(--serif);
-      font-size: 3rem;
+    /* top-left corner bracket */
+    .about-photo-wrap::after {
+      content: '';
+      position: absolute;
+      top: -12px; left: -12px;
+      width: 52px; height: 52px;
+      border-top: 3px solid var(--gold);
+      border-left: 3px solid var(--gold);
+      border-radius: 2px;
+      z-index: 2;
+    }
+    .about-photo {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      display: block;
+      border-radius: var(--radius);
+      /* blends black bg seamlessly into dark navy */
+      mix-blend-mode: lighten;
+      filter: contrast(1.04) brightness(1.05);
+    }
+    /* bottom-right corner bracket */
+    .about-photo-badge {
+      position: absolute;
+      bottom: -16px; right: -16px;
+      z-index: 2;
+      background: var(--navy3);
+      border: 1px solid rgba(201,168,76,0.3);
+      border-radius: 10px;
+      padding: 12px 18px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+    .about-photo-badge-dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--gold);
+      flex-shrink: 0;
+      animation: pulse 2s ease-in-out infinite;
+    }
+    .about-photo-badge span {
+      font-size: 0.78rem;
+      font-weight: 600;
+      letter-spacing: 0.06em;
       color: var(--gold);
-      opacity: 0.3;
-      line-height: 1;
-      margin-bottom: 12px;
-    }
-    .about-card p {
-      font-size: 0.95rem;
-      color: var(--light);
-      line-height: 1.8;
-      font-style: italic;
+      white-space: nowrap;
     }
     .about-tags {
       display: flex;
@@ -1090,14 +1125,11 @@
   <div class="container">
     <div class="about-grid">
       <div class="about-visual fade-in">
-        <div class="about-card">
-          <div class="about-card-quote">"</div>
-          <p>My goal is not to sell you a product. It is to help you build a financial plan that actually fits your life — your timeline, your goals, and your peace of mind.</p>
-          <div class="about-tags">
-            <span class="about-tag">AMFI Registered</span>
-            <span class="about-tag">Goal-Based Investing</span>
-            <span class="about-tag">Independent Advisor</span>
-            <span class="about-tag">Long-term Focus</span>
+        <div class="about-photo-wrap">
+          <img src="picture.png" alt="Tilak Chandra Shastri — AMFI Registered MFD" class="about-photo" />
+          <div class="about-photo-badge">
+            <div class="about-photo-badge-dot"></div>
+            <span>AMFI Registered · ARN-346031</span>
           </div>
         </div>
       </div>
@@ -1123,6 +1155,12 @@
           <strong>Future plans</strong> include offering Portfolio Management Services (PMS)
           under Shastri Financial Services as the practice continues to grow.
         </p>
+        <div class="about-tags">
+          <span class="about-tag">AMFI Registered</span>
+          <span class="about-tag">Goal-Based Investing</span>
+          <span class="about-tag">Independent Advisor</span>
+          <span class="about-tag">Long-term Focus</span>
+        </div>
       </div>
     </div>
   </div>

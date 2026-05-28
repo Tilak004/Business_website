@@ -329,7 +329,7 @@
     }
 
     /* ─── About ─────────────────────────────────────────────────── */
-    #about { background: var(--navy2); }
+    #about { background: #080F1E; }
     .about-grid {
       display: grid;
       grid-template-columns: 1fr 1fr;
@@ -372,9 +372,10 @@
       width: 100%;
       display: block;
       border-radius: var(--radius);
-      /* blends black bg seamlessly into dark navy */
-      mix-blend-mode: lighten;
-      filter: contrast(1.04) brightness(1.05);
+      /* fade edges into background — works regardless of stacking context */
+      -webkit-mask-image: radial-gradient(ellipse 78% 88% at 50% 38%, black 52%, transparent 88%);
+      mask-image: radial-gradient(ellipse 78% 88% at 50% 38%, black 52%, transparent 88%);
+      filter: contrast(1.05) brightness(1.08) drop-shadow(0 0 24px rgba(201,168,76,0.12));
     }
     /* bottom-right corner bracket */
     .about-photo-badge {

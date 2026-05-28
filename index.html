@@ -332,8 +332,8 @@
     #about { background: #080F1E; }
     .about-grid {
       display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 80px;
+      grid-template-columns: 340px 1fr;
+      gap: 56px;
       align-items: center;
     }
     .about-visual {
@@ -343,24 +343,14 @@
     }
     .about-photo-wrap {
       position: relative;
-      max-width: 360px;
       width: 100%;
     }
-    /* gold offset frame behind the photo */
-    .about-photo-wrap::before {
-      content: '';
-      position: absolute;
-      top: 32px; left: -20px; right: 20px; bottom: -20px;
-      border: 1.5px solid rgba(201,168,76,0.35);
-      border-radius: var(--radius);
-      background: rgba(201,168,76,0.04);
-    }
-    /* top-left corner bracket */
+    /* top-left corner bracket — desktop only */
     .about-photo-wrap::after {
       content: '';
       position: absolute;
       top: -12px; left: -12px;
-      width: 52px; height: 52px;
+      width: 48px; height: 48px;
       border-top: 3px solid var(--gold);
       border-left: 3px solid var(--gold);
       border-radius: 2px;
@@ -372,10 +362,10 @@
       width: 100%;
       display: block;
       border-radius: var(--radius);
-      /* fade edges into background — works regardless of stacking context */
-      -webkit-mask-image: radial-gradient(ellipse 78% 88% at 50% 38%, black 52%, transparent 88%);
-      mask-image: radial-gradient(ellipse 78% 88% at 50% 38%, black 52%, transparent 88%);
-      filter: contrast(1.05) brightness(1.08) drop-shadow(0 0 24px rgba(201,168,76,0.12));
+      /* fade only top & bottom — keeps full width of person visible */
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0%, black 7%, black 82%, transparent 100%);
+      mask-image: linear-gradient(to bottom, transparent 0%, black 7%, black 82%, transparent 100%);
+      filter: contrast(1.02) brightness(1.03);
     }
     /* bottom-right corner bracket */
     .about-photo-badge {
@@ -1038,8 +1028,10 @@
       .section { padding: 72px 0; }
       .about-grid,
       .why-grid,
-      .contact-grid { grid-template-columns: 1fr; gap: 48px; }
+      .contact-grid { grid-template-columns: 1fr; gap: 40px; }
       .about-visual { order: -1; }
+      .about-photo-wrap { max-width: 260px; margin: 0 auto; }
+      .about-photo-wrap::after { display: none; }
       .stat-item:not(:last-child)::after { display: none; }
     }
     @media (max-width: 768px) {
@@ -1052,10 +1044,15 @@
       .hero-ctas a { text-align: center; justify-content: center; }
     }
     @media (max-width: 480px) {
+      .section { padding: 56px 0; }
+      .container { padding: 0 18px; }
       .stats-grid { grid-template-columns: 1fr 1fr; }
-      .stat-item { padding: 28px 16px; }
-      .contact-form { padding: 28px 22px; }
-      .why-cta-panel { padding: 32px 24px; }
+      .stat-item { padding: 24px 12px; }
+      .contact-form { padding: 24px 18px; }
+      .why-cta-panel { padding: 28px 20px; }
+      .about-photo-wrap { max-width: 220px; }
+      .section-title { font-size: 1.7rem; }
+      .hero-title { font-size: 2.4rem; }
     }
   </style>
 </head>
@@ -1128,10 +1125,6 @@
       <div class="about-visual fade-in">
         <div class="about-photo-wrap">
           <img src="picture.png" alt="Tilak Chandra Shastri — AMFI Registered MFD" class="about-photo" />
-          <div class="about-photo-badge">
-            <div class="about-photo-badge-dot"></div>
-            <span>AMFI Registered · ARN-346031</span>
-          </div>
         </div>
       </div>
       <div class="about-text fade-in">

@@ -261,12 +261,14 @@
     }
     .hero-desc { font-size: 1.02rem; color: var(--body); max-width: 520px; line-height: 1.8; margin-bottom: 32px; }
     .hero-ctas { display: flex; gap: 14px; flex-wrap: wrap; margin-bottom: 38px; }
-    .hero-trust { display: flex; gap: 30px; flex-wrap: wrap; align-items: center; }
-    .hero-trust-item { display: flex; flex-direction: column; }
-    .hero-trust-num { font-family: var(--serif); font-size: 1.5rem; font-weight: 700; color: var(--ink); line-height: 1; }
-    .hero-trust-num span { color: var(--gold); }
-    .hero-trust-label { font-size: 0.72rem; letter-spacing: 0.04em; color: var(--muted); text-transform: uppercase; margin-top: 5px; }
-    .hero-trust-div { width: 1px; height: 34px; background: var(--line); }
+    .hero-chips { display: flex; gap: 12px; flex-wrap: wrap; }
+    .hero-chip {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-size: 0.82rem; font-weight: 600; color: var(--ink2);
+      background: #fff; border: 1px solid var(--line); border-radius: 100px;
+      padding: 9px 16px; box-shadow: var(--shadow-sm);
+    }
+    .hero-chip svg { color: var(--gold); flex-shrink: 0; }
 
     /* Hero chart card */
     .chart-card {
@@ -676,21 +678,10 @@
             SIP Calculator
           </a>
         </div>
-        <div class="hero-trust">
-          <div class="hero-trust-item">
-            <span class="hero-trust-num">₹10<span>L+</span></span>
-            <span class="hero-trust-label">Assets Managed</span>
-          </div>
-          <div class="hero-trust-div"></div>
-          <div class="hero-trust-item">
-            <span class="hero-trust-num">₹1<span>L+</span></span>
-            <span class="hero-trust-label">Monthly SIP Book</span>
-          </div>
-          <div class="hero-trust-div"></div>
-          <div class="hero-trust-item">
-            <span class="hero-trust-num">5<span>+ yrs</span></span>
-            <span class="hero-trust-label">In the Markets</span>
-          </div>
+        <div class="hero-chips">
+          <span class="hero-chip"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Independent &amp; Unbiased</span>
+          <span class="hero-chip"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>Goal-Based Investing</span>
+          <span class="hero-chip"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6L9 17l-5-5"/></svg>AMFI Registered</span>
         </div>
       </div>
       <div class="hero-visual fade-in">

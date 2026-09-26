@@ -551,6 +551,12 @@
     }
     .form-submit:hover { background: var(--navy3); transform: translateY(-2px); box-shadow: 0 12px 30px rgba(10,22,40,0.22); }
     .form-note { font-size: 0.74rem; color: var(--muted); text-align: center; margin-top: 14px; line-height: 1.6; }
+    .form-consent { display: flex; gap: 11px; align-items: flex-start; margin: 4px 0 22px; cursor: pointer; }
+    .form-consent input[type="checkbox"] { flex-shrink: 0; width: 18px; height: 18px; margin-top: 2px; accent-color: var(--gold); cursor: pointer; }
+    .form-consent span { font-size: 0.78rem; color: var(--body); line-height: 1.6; }
+    .form-consent strong { color: var(--ink); font-weight: 600; }
+    .form-consent a { color: var(--gold); text-decoration: none; font-weight: 600; }
+    .form-consent a:hover { text-decoration: underline; }
     .form-success { display: none; text-align: center; padding: 20px; }
     .form-success .success-icon { font-size: 2.5rem; margin-bottom: 16px; }
     .form-success h4 { font-family: var(--serif); font-size: 1.4rem; color: var(--ink); margin-bottom: 8px; }
@@ -581,6 +587,16 @@
     .footer-links a:hover { color: var(--gold2); }
     .footer-disclaimer { font-size: 0.72rem; color: #6E7F98; max-width: 660px; line-height: 1.7; }
     .footer-copy { font-size: 0.75rem; color: #566579; }
+    .footer-privacy {
+      max-width: 720px; text-align: center; border: 1px solid rgba(201,168,76,0.18);
+      background: rgba(201,168,76,0.05); border-radius: var(--radius); padding: 20px 26px; scroll-margin-top: 90px;
+    }
+    .footer-privacy strong { color: var(--gold2); }
+    .footer-privacy > strong { display: block; font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 10px; }
+    .footer-privacy p { font-size: 0.74rem; color: #8494AC; line-height: 1.7; margin-bottom: 8px; }
+    .footer-privacy p:last-child { margin-bottom: 0; }
+    .footer-privacy a { color: var(--gold2); text-decoration: none; }
+    .footer-privacy a:hover { text-decoration: underline; }
 
     /* ─── Responsive ────────────────────────────────────────────── */
     @media (max-width: 980px) {
@@ -1225,6 +1241,10 @@
               <label for="message">Anything else you'd like to share? <span style="color:var(--muted);font-weight:400;text-transform:none;letter-spacing:0;">(optional)</span></label>
               <textarea id="message" name="message" placeholder="E.g. I'm starting fresh, I already have some SIPs, I want to review my current portfolio…"></textarea>
             </div>
+            <label class="form-consent">
+              <input type="checkbox" id="consent" name="consent" value="yes" required />
+              <span>I consent to Shastri Financial Services collecting the details I've submitted <strong>solely to respond to this enquiry</strong>. I understand my data will not be used for any other purpose (such as insurance, PMS or loans) without my separate consent. <a href="#privacy">Data protection &amp; grievance details ↓</a></span>
+            </label>
             <button type="submit" class="form-submit">
               Let's Talk →
             </button>
@@ -1271,6 +1291,22 @@
         results. Shastri Financial Services is an AMFI-registered Mutual Fund Distributor
         (ARN-346031) and does not provide guaranteed returns or assured income.
       </p>
+      <div class="footer-privacy" id="privacy">
+        <strong>Data Protection &amp; Privacy (DPDPA)</strong>
+        <p>
+          Shastri Financial Services acts as a Data Fiduciary under the Digital Personal Data
+          Protection Act, 2023. We collect personal data only with your consent and solely for
+          the stated purpose. Records are retained as required under SEBI / PMLA regulations and
+          are never sold or shared for marketing.
+        </p>
+        <p>
+          To correct or request erasure of your data, or to raise a grievance, contact our
+          Data Protection point of contact — <strong>Tilak Chandra Shastri</strong> ·
+          <a href="mailto:shastritilak880@gmail.com">shastritilak880@gmail.com</a> ·
+          <a href="https://wa.me/919481740319" target="_blank" rel="noopener">+91 94817 40319</a>.
+          We will acknowledge every request within 48 hours.
+        </p>
+      </div>
       <p class="footer-copy">© 2026 Shastri Financial Services. All rights reserved.</p>
     </div>
   </div>

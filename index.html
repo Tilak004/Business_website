@@ -4,6 +4,8 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Shastri Financial Services | Mutual Fund Distribution & Wealth Management</title>
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="favicon.png" />
   <meta name="description" content="Independent, AMFI-registered Mutual Fund Distributor helping individuals and families grow wealth through goal-based investing. ARN-346031. Book a free consultation." />
   <meta property="og:type" content="website" />
   <meta property="og:title" content="Shastri Financial Services | Wealth Management" />
@@ -20,28 +22,28 @@
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
     :root {
-      /* Institutional light palette */
-      --bg:      #FFFFFF;
-      --bg-alt:  #F4F7FB;   /* off-white alternating band */
-      --bg-tint: #EBF0F7;   /* slightly deeper */
-      --navy:    #0A1628;   /* brand ink / dark bands */
-      --navy2:   #12233F;
-      --navy3:   #1B3157;
-      --ink:     #0A1628;   /* headings */
-      --ink2:    #263C5A;   /* secondary heading */
-      --body:    #4B5D76;   /* body text */
-      --muted:   #7C8CA3;   /* muted text */
-      --line:    #E2E9F1;   /* hairline borders */
-      --gold:    #B0872B;   /* refined gold on white */
-      --gold2:   #C9A84C;   /* brighter gold */
-      --gold-soft: rgba(176,135,43,0.10);
+      /* Brand palette — matches logo: charcoal + orange + cream */
+      --bg:      #FDFBF6;   /* warm white */
+      --bg-alt:  #F6F6E9;   /* cream (logo background) */
+      --bg-tint: #EFEEDD;   /* slightly deeper cream */
+      --navy:    #23262B;   /* charcoal — brand dark / dark bands */
+      --navy2:   #2C3037;
+      --navy3:   #3A3F48;
+      --ink:     #23262B;   /* headings (charcoal) */
+      --ink2:    #3C4149;   /* secondary heading */
+      --body:    #55606C;   /* body text */
+      --muted:   #8A8B84;   /* muted text */
+      --line:    #E7E3D5;   /* warm hairline borders */
+      --gold:    #E0701C;   /* accent — orange (readable on light) */
+      --gold2:   #F5822E;   /* brighter orange */
+      --gold-soft: rgba(240,124,42,0.12);
       --white:   #FFFFFF;
       --serif:  'Playfair Display', Georgia, serif;
       --sans:   'Inter', system-ui, sans-serif;
       --radius: 14px;
-      --shadow-sm: 0 1px 3px rgba(16,33,60,0.06), 0 1px 2px rgba(16,33,60,0.04);
-      --shadow:    0 10px 34px rgba(16,33,60,0.09);
-      --shadow-lg: 0 24px 60px rgba(16,33,60,0.14);
+      --shadow-sm: 0 1px 3px rgba(35,30,20,0.07), 0 1px 2px rgba(35,30,20,0.05);
+      --shadow:    0 10px 34px rgba(35,30,20,0.09);
+      --shadow-lg: 0 24px 60px rgba(35,30,20,0.13);
       --transition: 0.35s cubic-bezier(0.4,0,0.2,1);
     }
 
@@ -113,7 +115,7 @@
       backdrop-filter: blur(14px);
       -webkit-backdrop-filter: blur(14px);
       padding: 13px 0;
-      box-shadow: 0 4px 24px rgba(16,33,60,0.07);
+      box-shadow: 0 4px 24px rgba(35,30,20,0.07);
       border-bottom: 1px solid var(--line);
     }
     .nav-inner { display: flex; align-items: center; justify-content: space-between; }
@@ -126,6 +128,8 @@
       letter-spacing: 0.01em;
     }
     .nav-brand span { color: var(--gold); }
+    .nav-logo { height: 46px; width: auto; display: block; transition: height var(--transition); }
+    #navbar.scrolled .nav-logo { height: 38px; }
     .nav-links { display: flex; gap: 34px; list-style: none; }
     .nav-links a {
       font-size: 0.83rem;
@@ -194,9 +198,9 @@
       text-decoration: none; cursor: pointer;
       transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
     }
-    .btn-primary:hover { background: var(--navy3); transform: translateY(-2px); box-shadow: 0 12px 30px rgba(10,22,40,0.22); }
+    .btn-primary:hover { background: var(--navy3); transform: translateY(-2px); box-shadow: 0 12px 30px rgba(35,30,20,0.22); }
     .btn-primary.gold { background: linear-gradient(135deg, var(--gold2), var(--gold)); color: var(--navy); }
-    .btn-primary.gold:hover { box-shadow: 0 12px 30px rgba(176,135,43,0.35); }
+    .btn-primary.gold:hover { box-shadow: 0 12px 30px rgba(240,124,42,0.35); }
     .btn-secondary {
       display: inline-flex; align-items: center; gap: 9px;
       font-size: 0.9rem; font-weight: 600; letter-spacing: 0.02em;
@@ -215,14 +219,14 @@
       position: relative; overflow: hidden;
       padding: 140px 0 90px;
       background:
-        radial-gradient(ellipse 70% 60% at 85% 20%, rgba(176,135,43,0.07) 0%, transparent 60%),
-        linear-gradient(180deg, #FFFFFF 0%, #F4F7FB 100%);
+        radial-gradient(ellipse 70% 60% at 85% 20%, rgba(240,124,42,0.07) 0%, transparent 60%),
+        linear-gradient(180deg, #FDFBF6 0%, #F6F6E9 100%);
     }
     .hero-grid-bg {
       position: absolute; inset: 0;
       background-image:
-        linear-gradient(rgba(27,49,87,0.035) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(27,49,87,0.035) 1px, transparent 1px);
+        linear-gradient(rgba(35,38,43,0.035) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(35,38,43,0.035) 1px, transparent 1px);
       background-size: 76px 76px;
       -webkit-mask-image: radial-gradient(ellipse 100% 80% at 50% 30%, black, transparent 80%);
       mask-image: radial-gradient(ellipse 100% 80% at 50% 30%, black, transparent 80%);
@@ -238,7 +242,7 @@
       font-size: 0.72rem; font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
       color: var(--gold);
       background: var(--gold-soft);
-      border: 1px solid rgba(176,135,43,0.28);
+      border: 1px solid rgba(240,124,42,0.28);
       padding: 7px 15px; border-radius: 100px; margin-bottom: 26px;
     }
     .hero-badge::before {
@@ -325,7 +329,7 @@
     .about-tag {
       font-size: 0.78rem; font-weight: 600; letter-spacing: 0.03em;
       padding: 6px 15px; background: var(--gold-soft);
-      border: 1px solid rgba(176,135,43,0.22); color: var(--gold); border-radius: 100px;
+      border: 1px solid rgba(240,124,42,0.22); color: var(--gold); border-radius: 100px;
     }
     .about-text p { font-size: 1rem; color: var(--body); line-height: 1.9; margin-bottom: 20px; }
     .about-text p strong { color: var(--ink); font-weight: 600; }
@@ -367,7 +371,7 @@
       padding: 36px 32px; position: relative; overflow: hidden; box-shadow: var(--shadow-sm);
       transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
     }
-    .offer-card:hover { border-color: rgba(176,135,43,0.35); transform: translateY(-6px); box-shadow: var(--shadow-lg); }
+    .offer-card:hover { border-color: rgba(240,124,42,0.35); transform: translateY(-6px); box-shadow: var(--shadow-lg); }
     .offer-card::after {
       content: ''; position: absolute; bottom: 0; left: 0; right: 100%; height: 3px;
       background: linear-gradient(90deg, var(--gold), var(--gold2)); transition: right 0.5s ease;
@@ -391,8 +395,8 @@
     #stats::before {
       content: ''; position: absolute; inset: 0;
       background-image:
-        linear-gradient(rgba(201,168,76,0.05) 1px, transparent 1px),
-        linear-gradient(90deg, rgba(201,168,76,0.05) 1px, transparent 1px);
+        linear-gradient(rgba(245,130,46,0.05) 1px, transparent 1px),
+        linear-gradient(90deg, rgba(245,130,46,0.05) 1px, transparent 1px);
       background-size: 60px 60px; opacity: 0.6; pointer-events: none;
     }
     .stats-head { text-align: center; margin-bottom: 44px; position: relative; }
@@ -401,11 +405,11 @@
     .stats-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 2px; position: relative; }
     .stat-item { text-align: center; padding: 30px 28px; position: relative; }
     .stat-item:not(:last-child)::after {
-      content: ''; position: absolute; right: 0; top: 25%; bottom: 25%; width: 1px; background: rgba(201,168,76,0.18);
+      content: ''; position: absolute; right: 0; top: 25%; bottom: 25%; width: 1px; background: rgba(245,130,46,0.18);
     }
     .stat-number { font-family: var(--serif); font-size: clamp(2.2rem, 4vw, 3.1rem); font-weight: 700; color: var(--gold2); line-height: 1; margin-bottom: 10px; }
-    .stat-label { font-size: 0.84rem; font-weight: 600; letter-spacing: 0.06em; color: #E7EDF6; text-transform: uppercase; }
-    .stat-sublabel { font-size: 0.76rem; color: #8FA0BB; margin-top: 6px; }
+    .stat-label { font-size: 0.84rem; font-weight: 600; letter-spacing: 0.06em; color: #F1EEE4; text-transform: uppercase; }
+    .stat-sublabel { font-size: 0.76rem; color: #ABA99C; margin-top: 6px; }
 
     /* ─── AMC Logos ─────────────────────────────────────────────── */
     #amc { background: var(--bg); padding: 56px 0; border-bottom: 1px solid var(--line); }
@@ -419,7 +423,7 @@
       background: #fff; border: 1px solid var(--line); border-radius: 100px; white-space: nowrap; box-shadow: var(--shadow-sm);
       transition: border-color var(--transition), transform var(--transition);
     }
-    .amc-chip:hover { border-color: rgba(176,135,43,0.4); transform: translateY(-2px); }
+    .amc-chip:hover { border-color: rgba(240,124,42,0.4); transform: translateY(-2px); }
     .amc-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
     .amc-chip span { font-size: 0.82rem; font-weight: 600; letter-spacing: 0.02em; color: var(--ink2); }
 
@@ -432,7 +436,7 @@
       background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 34px; position: relative;
       box-shadow: var(--shadow-sm); transition: border-color var(--transition), box-shadow var(--transition), transform var(--transition);
     }
-    .testimonial-card:hover { border-color: rgba(176,135,43,0.28); box-shadow: var(--shadow); transform: translateY(-4px); }
+    .testimonial-card:hover { border-color: rgba(240,124,42,0.28); box-shadow: var(--shadow); transform: translateY(-4px); }
     .testimonial-quote { font-size: 2.6rem; color: var(--gold); opacity: 0.35; font-family: var(--serif); line-height: 0.6; margin-bottom: 14px; }
     .testimonial-stars { color: var(--gold2); font-size: 0.85rem; letter-spacing: 2px; margin-bottom: 14px; }
     .testimonial-text { font-size: 0.94rem; color: var(--ink2); line-height: 1.85; margin-bottom: 24px; }
@@ -452,7 +456,7 @@
     .why-point { display: flex; gap: 20px; }
     .why-icon {
       width: 50px; height: 50px; flex-shrink: 0; background: var(--gold-soft);
-      border: 1px solid rgba(176,135,43,0.25); border-radius: 12px;
+      border: 1px solid rgba(240,124,42,0.25); border-radius: 12px;
       display: flex; align-items: center; justify-content: center; font-size: 1.2rem;
     }
     .why-point-text h4 { font-family: var(--serif); font-size: 1.12rem; font-weight: 600; color: var(--ink); margin-bottom: 6px; }
@@ -464,10 +468,10 @@
     }
     .why-cta-panel::before { content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px; background: linear-gradient(90deg, transparent, var(--gold2), transparent); }
     .why-cta-panel h3 { font-family: var(--serif); font-size: 1.6rem; color: #fff; margin-bottom: 14px; }
-    .why-cta-panel p { font-size: 0.9rem; color: #B9C5D8; line-height: 1.8; margin-bottom: 30px; }
+    .why-cta-panel p { font-size: 0.9rem; color: #CBC7BB; line-height: 1.8; margin-bottom: 30px; }
     .arn-badge {
       display: inline-block; font-size: 0.76rem; font-weight: 700; letter-spacing: 0.08em;
-      padding: 7px 17px; background: rgba(201,168,76,0.14); border: 1px solid rgba(201,168,76,0.35);
+      padding: 7px 17px; background: rgba(245,130,46,0.14); border: 1px solid rgba(245,130,46,0.35);
       color: var(--gold2); border-radius: 100px; margin-bottom: 26px;
     }
 
@@ -514,13 +518,13 @@
     #contact { background: var(--bg); position: relative; overflow: hidden; }
     #contact::before {
       content: ''; position: absolute; top: -220px; right: -180px; width: 560px; height: 560px;
-      background: radial-gradient(circle, rgba(176,135,43,0.06) 0%, transparent 70%); pointer-events: none;
+      background: radial-gradient(circle, rgba(240,124,42,0.06) 0%, transparent 70%); pointer-events: none;
     }
     .contact-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; align-items: start; position: relative; }
     .contact-info .section-sub { margin-bottom: 38px; }
     .contact-detail { display: flex; align-items: flex-start; gap: 16px; margin-bottom: 22px; }
     .contact-detail-icon {
-      width: 44px; height: 44px; flex-shrink: 0; background: var(--gold-soft); border: 1px solid rgba(176,135,43,0.2);
+      width: 44px; height: 44px; flex-shrink: 0; background: var(--gold-soft); border: 1px solid rgba(240,124,42,0.2);
       border-radius: 10px; display: flex; align-items: center; justify-content: center; font-size: 1rem;
     }
     .contact-detail-text strong { display: block; font-size: 0.72rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; color: var(--gold); margin-bottom: 3px; }
@@ -538,7 +542,7 @@
       transition: border-color var(--transition), background var(--transition); appearance: none; -webkit-appearance: none;
     }
     .form-group select {
-      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23B0872B' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='12' height='8' viewBox='0 0 12 8'%3E%3Cpath d='M1 1l5 5 5-5' stroke='%23E0701C' stroke-width='1.5' fill='none' stroke-linecap='round'/%3E%3C/svg%3E");
       background-repeat: no-repeat; background-position: right 14px center; padding-right: 40px;
     }
     .form-group input:focus, .form-group select:focus, .form-group textarea:focus { border-color: var(--gold); background: #fff; }
@@ -549,7 +553,7 @@
       background: var(--navy); color: #fff; border: none; border-radius: 8px; cursor: pointer;
       transition: background var(--transition), transform var(--transition), box-shadow var(--transition);
     }
-    .form-submit:hover { background: var(--navy3); transform: translateY(-2px); box-shadow: 0 12px 30px rgba(10,22,40,0.22); }
+    .form-submit:hover { background: var(--navy3); transform: translateY(-2px); box-shadow: 0 12px 30px rgba(35,30,20,0.22); }
     .form-note { font-size: 0.74rem; color: var(--muted); text-align: center; margin-top: 14px; line-height: 1.6; }
     .form-consent { display: flex; gap: 11px; align-items: flex-start; margin: 4px 0 22px; cursor: pointer; }
     .form-consent input[type="checkbox"] { flex-shrink: 0; width: 18px; height: 18px; margin-top: 2px; accent-color: var(--gold); cursor: pointer; }
@@ -583,13 +587,13 @@
     .footer-brand span { color: var(--gold2); }
     .footer-arn { font-size: 0.8rem; letter-spacing: 0.05em; color: var(--gold2); font-weight: 500; }
     .footer-links { display: flex; gap: 28px; list-style: none; }
-    .footer-links a { font-size: 0.82rem; color: #A9B7CD; text-decoration: none; transition: color var(--transition); }
+    .footer-links a { font-size: 0.82rem; color: #B7B3A5; text-decoration: none; transition: color var(--transition); }
     .footer-links a:hover { color: var(--gold2); }
-    .footer-disclaimer { font-size: 0.72rem; color: #6E7F98; max-width: 660px; line-height: 1.7; }
-    .footer-copy { font-size: 0.75rem; color: #566579; }
+    .footer-disclaimer { font-size: 0.72rem; color: #8C877B; max-width: 660px; line-height: 1.7; }
+    .footer-copy { font-size: 0.75rem; color: #6E6A60; }
     .footer-privacy {
-      max-width: 720px; text-align: center; border: 1px solid rgba(201,168,76,0.18);
-      background: rgba(201,168,76,0.05); border-radius: var(--radius); padding: 20px 26px; scroll-margin-top: 90px;
+      max-width: 720px; text-align: center; border: 1px solid rgba(245,130,46,0.18);
+      background: rgba(245,130,46,0.05); border-radius: var(--radius); padding: 20px 26px; scroll-margin-top: 90px;
     }
     .footer-privacy strong { color: var(--gold2); }
     .footer-privacy > strong { display: block; font-size: 0.8rem; letter-spacing: 0.06em; text-transform: uppercase; margin-bottom: 10px; }
@@ -641,7 +645,7 @@
 <nav id="navbar">
   <div class="container">
     <div class="nav-inner">
-      <a href="#hero" class="nav-brand">Shastri <span>Financial</span></a>
+      <a href="#hero" class="nav-brand"><img src="logo.png" alt="Shastri Financial Services" class="nav-logo" /></a>
       <ul class="nav-links">
         <li><a href="#about">About</a></li>
         <li><a href="#offerings">Services</a></li>
@@ -716,8 +720,8 @@
           <svg class="chart-svg" viewBox="0 0 400 210" preserveAspectRatio="none" role="img" aria-label="Illustrative SIP growth curve">
             <defs>
               <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
-                <stop offset="0%" stop-color="#C9A84C" stop-opacity="0.28"/>
-                <stop offset="100%" stop-color="#C9A84C" stop-opacity="0"/>
+                <stop offset="0%" stop-color="#F5822E" stop-opacity="0.28"/>
+                <stop offset="100%" stop-color="#F5822E" stop-opacity="0"/>
               </linearGradient>
             </defs>
             <line x1="0" y1="50"  x2="400" y2="50"  stroke="#E2E9F1" stroke-width="1"/>
@@ -757,10 +761,6 @@
           Every client relationship begins with a conversation, not a proposal.
           I take the time to understand where you are, where you want to go,
           and then build a practical, personalised investment roadmap to get you there.
-        </p>
-        <p>
-          <strong>Future plans</strong> include offering Portfolio Management Services (PMS)
-          under Shastri Financial Services as the practice continues to grow.
         </p>
         <div class="about-tags">
           <span class="about-tag">AMFI Registered</span>
@@ -1084,7 +1084,7 @@
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07A19.5 19.5 0 013.95 9.77a19.79 19.79 0 01-3.07-8.68A2 2 0 012.86 1h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L7.09 8.64a16 16 0 006.29 6.29l1-1.02a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
             Book a Free Consultation
           </a>
-          <p style="font-size:0.75rem; color:#8FA0BB; margin-top:16px; margin-bottom:0;">No commitment. No cold calls. Just a conversation.</p>
+          <p style="font-size:0.75rem; color:#ABA99C; margin-top:16px; margin-bottom:0;">No commitment. No cold calls. Just a conversation.</p>
         </div>
       </div>
     </div>
@@ -1126,9 +1126,9 @@
         <div class="sip-donut-wrap">
           <div class="sip-donut">
             <svg width="130" height="130" viewBox="0 0 130 130">
-              <circle cx="65" cy="65" r="52" fill="none" stroke="#EBF0F7" stroke-width="18"/>
-              <circle id="sipRingInvested" class="sip-donut-ring" cx="65" cy="65" r="52" fill="none" stroke="#1B3157" stroke-width="18" stroke-linecap="butt" stroke-dasharray="0 327"/>
-              <circle id="sipRingReturns" class="sip-donut-ring" cx="65" cy="65" r="52" fill="none" stroke="#C9A84C" stroke-width="18" stroke-linecap="butt" stroke-dasharray="0 327" stroke-dashoffset="0"/>
+              <circle cx="65" cy="65" r="52" fill="none" stroke="#ECE8DA" stroke-width="18"/>
+              <circle id="sipRingInvested" class="sip-donut-ring" cx="65" cy="65" r="52" fill="none" stroke="#2C3037" stroke-width="18" stroke-linecap="butt" stroke-dasharray="0 327"/>
+              <circle id="sipRingReturns" class="sip-donut-ring" cx="65" cy="65" r="52" fill="none" stroke="#F5822E" stroke-width="18" stroke-linecap="butt" stroke-dasharray="0 327" stroke-dashoffset="0"/>
             </svg>
             <div class="sip-donut-center">
               <div class="sip-donut-mult" id="sipMultiple">1.9x</div>
@@ -1137,11 +1137,11 @@
           </div>
           <div class="sip-legend">
             <div class="sip-legend-item">
-              <div class="sip-legend-top"><span class="sip-legend-dot" style="background:#1B3157;"></span>Amount Invested</div>
+              <div class="sip-legend-top"><span class="sip-legend-dot" style="background:#2C3037;"></span>Amount Invested</div>
               <div class="sip-legend-val" id="sipInvested">₹6.00 L</div>
             </div>
             <div class="sip-legend-item">
-              <div class="sip-legend-top"><span class="sip-legend-dot" style="background:#C9A84C;"></span>Wealth Gained</div>
+              <div class="sip-legend-top"><span class="sip-legend-dot" style="background:#F5822E;"></span>Wealth Gained</div>
               <div class="sip-legend-val" id="sipGains">₹5.62 L</div>
             </div>
           </div>

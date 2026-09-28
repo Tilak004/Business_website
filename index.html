@@ -652,7 +652,7 @@
         <li><a href="#stats">Track Record</a></li>
         <li><a href="#testimonials">Clients</a></li>
         <li><a href="#why">Why Us</a></li>
-        <li><a href="#sip-calc">SIP Calc</a></li>
+        <li><a href="#sip-calc">Calculators</a></li>
       </ul>
       <a href="#contact" class="nav-cta">Book a Call</a>
       <div class="hamburger" id="hamburger" aria-label="Open menu">
@@ -669,7 +669,7 @@
   <a href="#stats" class="mobile-link">Track Record</a>
   <a href="#testimonials" class="mobile-link">Clients</a>
   <a href="#why" class="mobile-link">Why Us</a>
-  <a href="#sip-calc" class="mobile-link">SIP Calc</a>
+  <a href="#sip-calc" class="mobile-link">Calculators</a>
   <a href="#contact" class="mobile-link">Book a Call</a>
 </div>
 
@@ -1155,6 +1155,70 @@
   </div>
 </section>
 
+<!-- ─── Goal-Based Calculator ───────────────────────────────────── -->
+<section id="goal-calc" class="section" style="background:var(--bg);">
+  <div class="container">
+    <div class="hiw-header fade-in" style="text-align:center; margin-bottom:60px;">
+      <p class="section-label">Goal Planner</p>
+      <h2 class="section-title">How Much Should I Invest?</h2>
+      <div class="gold-line" style="margin:20px auto 0;"></div>
+      <p class="section-sub" style="margin:20px auto 0;">
+        Tell me your goal and timeline, and see the monthly SIP that gets you there.
+      </p>
+    </div>
+    <div class="sip-calc-inner">
+      <div class="sip-controls fade-in">
+        <div class="sip-control-group">
+          <label for="goalTarget">Target Amount <span id="goalTargetVal">₹50.00 L</span></label>
+          <input type="range" id="goalTarget" min="100000" max="50000000" step="100000" value="5000000" />
+        </div>
+        <div class="sip-control-group">
+          <label for="goalYears">Years to Goal <span id="goalYearsVal">15 Years</span></label>
+          <input type="range" id="goalYears" min="1" max="40" step="1" value="15" />
+        </div>
+        <div class="sip-control-group">
+          <label for="goalReturn">Expected Annual Return <span id="goalReturnVal">12%</span></label>
+          <input type="range" id="goalReturn" min="6" max="20" step="0.5" value="12" />
+        </div>
+        <p style="font-size:0.82rem; color:var(--muted); line-height:1.7; margin-top:8px;">
+          Set your goal, timeline and an expected return. Returns are illustrative — actual mutual fund returns vary with market conditions.
+        </p>
+      </div>
+      <div class="sip-result fade-in">
+        <div class="sip-result-label">Monthly SIP Needed</div>
+        <div class="sip-result-value" id="goalSip">₹10,004</div>
+        <div class="sip-donut-wrap">
+          <div class="sip-donut">
+            <svg width="130" height="130" viewBox="0 0 130 130">
+              <circle cx="65" cy="65" r="52" fill="none" stroke="#ECE8DA" stroke-width="18"/>
+              <circle id="goalRingInvested" class="sip-donut-ring" cx="65" cy="65" r="52" fill="none" stroke="#2C3037" stroke-width="18" stroke-linecap="butt" stroke-dasharray="0 327"/>
+              <circle id="goalRingReturns" class="sip-donut-ring" cx="65" cy="65" r="52" fill="none" stroke="#F5822E" stroke-width="18" stroke-linecap="butt" stroke-dasharray="0 327" stroke-dashoffset="0"/>
+            </svg>
+            <div class="sip-donut-center">
+              <div class="sip-donut-mult" id="goalMultiple">2.8x</div>
+              <div class="sip-donut-multlabel">Growth</div>
+            </div>
+          </div>
+          <div class="sip-legend">
+            <div class="sip-legend-item">
+              <div class="sip-legend-top"><span class="sip-legend-dot" style="background:#2C3037;"></span>You Invest</div>
+              <div class="sip-legend-val" id="goalInvested">₹18.00 L</div>
+            </div>
+            <div class="sip-legend-item">
+              <div class="sip-legend-top"><span class="sip-legend-dot" style="background:#F5822E;"></span>Wealth Gained</div>
+              <div class="sip-legend-val" id="goalGains">₹32.00 L</div>
+            </div>
+          </div>
+        </div>
+        <a href="#contact" class="btn-primary" style="width:100%; justify-content:center; margin-bottom:16px;">
+          Get a Personalised Plan
+        </a>
+        <p class="sip-note">Illustrative only, assuming monthly compounding. Not a guarantee of returns. Mutual Fund investments are subject to market risks.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
 <!-- ─── Contact ───────────────────────────────────────────────── -->
 <section id="contact" class="section">
   <div class="container">
@@ -1467,6 +1531,61 @@
     }
 
     [amountEl, yearsEl, returnEl].forEach(el => el.addEventListener('input', calc));
+    calc();
+  })();
+
+  /* Goal-Based Calculator — required monthly SIP for a target corpus */
+  (function() {
+    const targetEl  = document.getElementById('goalTarget');
+    const yearsEl   = document.getElementById('goalYears');
+    const returnEl  = document.getElementById('goalReturn');
+    const targetVal = document.getElementById('goalTargetVal');
+    const yearsVal  = document.getElementById('goalYearsVal');
+    const returnVal = document.getElementById('goalReturnVal');
+    const sipEl     = document.getElementById('goalSip');
+    const investedEl= document.getElementById('goalInvested');
+    const gainsEl   = document.getElementById('goalGains');
+    const ringInv   = document.getElementById('goalRingInvested');
+    const ringRet   = document.getElementById('goalRingReturns');
+    const multEl    = document.getElementById('goalMultiple');
+    if (!targetEl) return;
+    const CIRC = 2 * Math.PI * 52;
+
+    function fmt(n) {
+      if (n >= 1e7) return '₹' + (n/1e7).toFixed(2) + ' Cr';
+      if (n >= 1e5) return '₹' + (n/1e5).toFixed(2) + ' L';
+      return '₹' + Math.round(n).toLocaleString('en-IN');
+    }
+    function fillTrack(el) {
+      const pct = ((el.value - el.min) / (el.max - el.min)) * 100;
+      el.style.background = 'linear-gradient(90deg, var(--gold) ' + pct + '%, var(--line) ' + pct + '%)';
+    }
+    function calc() {
+      const FV = parseInt(targetEl.value, 10);
+      const n  = parseInt(yearsEl.value, 10) * 12;
+      const r  = parseFloat(returnEl.value) / 100 / 12;
+      const factor = r === 0 ? n : ((Math.pow(1 + r, n) - 1) / r) * (1 + r);
+      const P = FV / factor;
+      const invested = P * n;
+      const gains = FV - invested;
+
+      targetVal.textContent = fmt(FV);
+      yearsVal.textContent  = yearsEl.value + (yearsEl.value == 1 ? ' Year' : ' Years');
+      returnVal.textContent = parseFloat(returnEl.value).toFixed(1) + '%';
+      sipEl.textContent     = '₹' + Math.round(P).toLocaleString('en-IN');
+      investedEl.textContent= fmt(invested);
+      gainsEl.textContent   = fmt(gains);
+
+      const invLen = (invested / FV) * CIRC;
+      const retLen = (gains / FV) * CIRC;
+      ringInv.setAttribute('stroke-dasharray', invLen + ' ' + (CIRC - invLen));
+      ringRet.setAttribute('stroke-dasharray', retLen + ' ' + (CIRC - retLen));
+      ringRet.setAttribute('stroke-dashoffset', -invLen);
+      multEl.textContent = (FV / invested).toFixed(1) + 'x';
+
+      [targetEl, yearsEl, returnEl].forEach(fillTrack);
+    }
+    [targetEl, yearsEl, returnEl].forEach(el => el.addEventListener('input', calc));
     calc();
   })();
 

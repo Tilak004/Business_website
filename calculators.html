@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Financial Calculators | Shastri Financial Services</title>
+  <meta name="description" content="Free SIP and goal-planning calculators from Shastri Financial Services, AMFI-registered Mutual Fund Distributor (ARN-346031). Illustrative, educational tools." />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link rel="apple-touch-icon" href="favicon.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    .calc-hero { padding: 132px 0 0; text-align: center; background: linear-gradient(180deg,#FDFBF6 0%,#F6F6E9 100%); }
+    .calc-hero .section-label { color: var(--gold); }
+    .calc-hero h1 { font-family: var(--serif); font-size: clamp(2rem,4vw,2.9rem); color: var(--ink); line-height:1.15; margin-bottom:14px; letter-spacing:-0.01em; }
+    .calc-hero p { color: var(--body); max-width: 580px; margin: 0 auto; line-height:1.7; }
+    #calculators { padding: 56px 0 90px; background: var(--bg-alt); }
+    .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+    .calc-card { background:#fff; border:1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 34px 32px; position: relative; overflow: hidden; }
+    .calc-card::before { content:''; position:absolute; top:0; left:0; right:0; height:4px; background: linear-gradient(90deg,var(--gold),var(--gold2)); }
+    .calc-card-head { margin-bottom: 26px; }
+    .calc-card-head .section-label { margin-bottom: 6px; }
+    .calc-card-head h2 { font-family: var(--serif); font-size: 1.5rem; color: var(--ink); line-height:1.2; }
+    .calc-card-head .calc-card-sub { font-size: 0.9rem; color: var(--body); margin-top: 6px; line-height:1.6; }
+    .calc-card .sip-controls { gap: 22px; margin-bottom: 30px; }
+    .calc-card .sip-result { background: none; border: none; box-shadow: none; padding: 0; }
+    .calc-card .sip-result::before { display: none; }
+    .calc-card .sip-result-value { margin-bottom: 24px; }
+    @media (max-width: 860px) { .calc-grid { grid-template-columns: 1fr; } }
+  </style>
+</head>
+<body>
+<nav id="navbar">
+  <div class="container">
+    <div class="nav-inner">
+      <a href="index.html#hero" class="nav-brand"><img src="logo.png" alt="Shastri Financial Services" class="nav-logo" /></a>
+      <ul class="nav-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#offerings">Services</a></li>
+        <li><a href="index.html#stats">Track Record</a></li>
+        <li><a href="index.html#testimonials">Clients</a></li>
+        <li><a href="index.html#why">Why Us</a></li>
+        <li><a href="calculators.html">Calculators</a></li>
+      </ul>
+      <a href="index.html#contact" class="nav-cta">Book a Call</a>
+      <div class="hamburger" id="hamburger" aria-label="Open menu">
+        <span></span><span></span><span></span>
+      </div>
+    </div>
+  </div>
+</nav>
+
+<div class="mobile-menu" id="mobileMenu">
+  <a href="index.html#about" class="mobile-link">About</a>
+  <a href="index.html#offerings" class="mobile-link">Services</a>
+  <a href="index.html#stats" class="mobile-link">Track Record</a>
+  <a href="index.html#testimonials" class="mobile-link">Clients</a>
+  <a href="index.html#why" class="mobile-link">Why Us</a>
+  <a href="calculators.html" class="mobile-link">Calculators</a>
+  <a href="index.html#contact" class="mobile-link">Book a Call</a>
+</div>
+
+<!-- Page header -->
+<section class="calc-hero">
+  <div class="container">
+    <p class="section-label">Free Tools</p>
+    <h1>Financial Calculators</h1>
+    <p>Plan with clarity. Model your SIP and see the monthly investment your goals need. Educational tools, not investment advice.</p>
+  </div>
+</section>
+
+<section id="calculators">
+  <div class="container">
+    <div class="calc-grid">
+      <div class="calc-card fade-in">
+        <div class="calc-card-head">
+          <p class="section-label">Grow a SIP</p>
+          <h2>SIP Returns Calculator</h2>
+          <p class="calc-card-sub">See how small, disciplined monthly investments compound into wealth over time.</p>
+        </div>
+        <div class="sip-controls">
+          <div class="sip-control-group">
+            <label for="sipAmount">Monthly SIP Amount <span id="sipAmountVal">₹5,000</span></label>
+            <input type="range" id="sipAmount" min="500" max="100000" step="500" value="5000" />
+          </div>
+          <div class="sip-control-group">
+            <label for="sipYears">Investment Period <span id="sipYearsVal">10 Years</span></label>
+            <input type="range" id="sipYears" min="1" max="30" step="1" value="10" />
+          </div>
+          <div class="sip-control-group">
+            <label for="sipReturn">Expected Annual Return <span id="sipReturnVal">12%</span></label>
+            <input type="range" id="sipReturn" min="6" max="20" step="0.5" value="12" />
+          </div>
+        </div>
+        <div class="sip-result">
+          <div class="sip-result-label">Total Corpus at Maturity</div>
+          <div class="sip-result-value" id="sipCorpus">₹11.62 L</div>
+          <div class="sip-donut-wrap">
+            <div class="sip-donut">
+              <svg width="130" height="130" viewBox="0 0 130 130">
+                <circle cx="65" cy="65" r="52" fill="none" stroke="#ECE8DA" stroke-width="18"/>
+                <circle id="sipRingInvested" class="sip-donut-ring" cx="65" cy="65" r="52" fill="none" stroke="#2C3037" stroke-width="18" stroke-linecap="butt" stroke-dasharray="0 327"/>
+                <circle id="sipRingReturns" class="sip-donut-ring" cx="65" cy="65" r="52" fill="none" stroke="#F5822E" stroke-width="18" stroke-linecap="butt" stroke-dasharray="0 327" stroke-dashoffset="0"/>
+              </svg>
+              <div class="sip-donut-center">
+                <div class="sip-donut-mult" id="sipMultiple">1.9x</div>
+                <div class="sip-donut-multlabel">Growth</div>
+              </div>
+            </div>
+            <div class="sip-legend">
+              <div class="sip-legend-item">
+                <div class="sip-legend-top"><span class="sip-legend-dot" style="background:#2C3037;"></span>Amount Invested</div>
+                <div class="sip-legend-val" id="sipInvested">₹6.00 L</div>
+              </div>
+              <div class="sip-legend-item">
+                <div class="sip-legend-top"><span class="sip-legend-dot" style="background:#F5822E;"></span>Wealth Gained</div>
+                <div class="sip-legend-val" id="sipGains">₹5.62 L</div>
+              </div>
+            </div>
+          </div>
+          <a href="index.html#contact" class="btn-primary" style="width:100%; justify-content:center; margin-bottom:16px;">Start Investing Now</a>
+          <p class="sip-note">Assumes monthly compounding. Not a guarantee of returns. Mutual Fund investments are subject to market risks.</p>
+        </div>
+      </div>
+      <div class="calc-card fade-in">
+        <div class="calc-card-head">
+          <p class="section-label">Plan a Goal</p>
+          <h2>Goal Planner</h2>
+          <p class="calc-card-sub">Tell me your goal and timeline, and see the monthly SIP that gets you there.</p>
+        </div>
+        <div class="sip-controls">
+          <div class="sip-control-group">
+            <label for="goalTarget">Target Amount <span id="goalTargetVal">₹50.00 L</span></label>
+            <input type="range" id="goalTarget" min="100000" max="50000000" step="100000" value="5000000" />
+          </div>
+          <div class="sip-control-group">
+            <label for="goalYears">Years to Goal <span id="goalYearsVal">15 Years</span></label>
+            <input type="range" id="goalYears" min="1" max="40" step="1" value="15" />
+          </div>
+          <div class="sip-control-group">
+            <label for="goalReturn">Expected Annual Return <span id="goalReturnVal">12%</span></label>
+            <input type="range" id="goalReturn" min="6" max="20" step="0.5" value="12" />
+          </div>
+        </div>
+        <div class="sip-result">
+          <div class="sip-result-label">Monthly SIP Needed</div>
+          <div class="sip-result-value" id="goalSip">₹10,004</div>
+          <div class="sip-donut-wrap">
+            <div class="sip-donut">
+              <svg width="130" height="130" viewBox="0 0 130 130">
+                <circle cx="65" cy="65" r="52" fill="none" stroke="#ECE8DA" stroke-width="18"/>
+                <circle id="goalRingInvested" class="sip-donut-ring" cx="65" cy="65" r="52" fill="none" stroke="#2C3037" stroke-width="18" stroke-linecap="butt" stroke-dasharray="0 327"/>
+                <circle id="goalRingReturns" class="sip-donut-ring" cx="65" cy="65" r="52" fill="none" stroke="#F5822E" stroke-width="18" stroke-linecap="butt" stroke-dasharray="0 327" stroke-dashoffset="0"/>
+              </svg>
+              <div class="sip-donut-center">
+                <div class="sip-donut-mult" id="goalMultiple">2.8x</div>
+                <div class="sip-donut-multlabel">Growth</div>
+              </div>
+            </div>
+            <div class="sip-legend">
+              <div class="sip-legend-item">
+                <div class="sip-legend-top"><span class="sip-legend-dot" style="background:#2C3037;"></span>You Invest</div>
+                <div class="sip-legend-val" id="goalInvested">₹18.00 L</div>
+              </div>
+              <div class="sip-legend-item">
+                <div class="sip-legend-top"><span class="sip-legend-dot" style="background:#F5822E;"></span>Wealth Gained</div>
+                <div class="sip-legend-val" id="goalGains">₹32.00 L</div>
+              </div>
+            </div>
+          </div>
+          <a href="index.html#contact" class="btn-primary" style="width:100%; justify-content:center; margin-bottom:16px;">Get a Personalised Plan</a>
+          <p class="sip-note">Illustrative only, assuming monthly compounding. Not a guarantee of returns. Mutual Fund investments are subject to market risks.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ─── WhatsApp FAB ───────────────────────────────────────────── -->
+<a href="https://wa.me/919481740319?text=Hi%20Tilak%2C%20I%27d%20like%20to%20learn%20more%20about%20your%20financial%20services." class="whatsapp-fab" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+  <span class="whatsapp-fab-tooltip">Chat on WhatsApp</span>
+  <svg width="28" height="28" viewBox="0 0 32 32" fill="white" xmlns="http://www.w3.org/2000/svg">
+    <path d="M16.004 2.667C8.639 2.667 2.667 8.638 2.667 16a13.254 13.254 0 001.779 6.63L2.667 29.333l6.88-1.753A13.298 13.298 0 0016.004 29.333C23.363 29.333 29.333 23.362 29.333 16c0-7.362-5.97-13.333-13.329-13.333zm0 24.32a11.04 11.04 0 01-5.617-1.534l-.402-.238-4.084 1.04 1.071-3.966-.262-.408A11.003 11.003 0 015 16c0-6.075 4.929-11.006 11.004-11.006S27.007 9.925 27.007 16c0 6.073-4.929 11.987-11.003 10.987zm6.024-8.236c-.33-.165-1.952-.964-2.254-1.073-.303-.11-.523-.165-.744.165-.22.329-.853 1.073-.046 1.292.22.055.44.11.632.165 1.073.33 2.232.027 2.949-.852.165-.22.055-.495-.537-.697z"/>
+    <path d="M21.344 19.617c-.33-.165-1.952-.963-2.254-1.073-.303-.11-.523-.165-.744.165-.22.33-.853 1.074-1.046 1.293-.192.22-.385.247-.715.083a9.006 9.006 0 01-2.657-1.64 9.95 9.95 0 01-1.84-2.29c-.192-.33-.02-.508.145-.672.148-.148.33-.385.494-.577.165-.193.22-.33.33-.55.11-.22.055-.412-.028-.577-.082-.165-.743-1.79-1.018-2.45-.268-.643-.54-.556-.743-.566-.193-.009-.413-.011-.632-.011-.22 0-.578.082-.88.412-.302.33-1.156 1.128-1.156 2.752s1.183 3.19 1.348 3.41c.165.22 2.327 3.554 5.641 4.986.789.34 1.403.543 1.882.695.79.25 1.51.215 2.079.13.634-.094 1.952-.798 2.228-1.569.275-.77.275-1.43.193-1.568-.083-.138-.303-.22-.632-.385z"/>
+  </svg>
+</a>
+
+<footer>
+  <div class="container">
+    <div class="footer-inner">
+      <div class="footer-brand">Shastri <span>Financial</span> Services</div>
+      <div class="footer-arn">ARN-346031 &nbsp;|&nbsp; AMFI Registered Mutual Fund Distributor</div>
+      <ul class="footer-links">
+        <li><a href="index.html#about">About</a></li>
+        <li><a href="index.html#offerings">Services</a></li>
+        <li><a href="index.html#testimonials">Clients</a></li>
+        <li><a href="index.html#contact">Contact</a></li>
+      </ul>
+      <p class="footer-disclaimer">
+        Mutual Fund investments are subject to market risks. Please read all scheme-related
+        documents carefully before investing. Past performance is not indicative of future
+        results. Shastri Financial Services is an AMFI-registered Mutual Fund Distributor
+        (ARN-346031) and does not provide guaranteed returns or assured income.
+      </p>
+      <div class="footer-privacy" id="privacy">
+        <strong>Data Protection &amp; Privacy (DPDPA)</strong>
+        <p>
+          Shastri Financial Services acts as a Data Fiduciary under the Digital Personal Data
+          Protection Act, 2023. We collect personal data only with your consent and solely for
+          the stated purpose. Records are retained as required under SEBI / PMLA regulations and
+          are never sold or shared for marketing.
+        </p>
+        <p>
+          To correct or request erasure of your data, or to raise a grievance, contact our
+          Data Protection point of contact — <strong>Tilak Chandra Shastri</strong> ·
+          <a href="mailto:shastritilak880@gmail.com">shastritilak880@gmail.com</a> ·
+          <a href="https://wa.me/919481740319" target="_blank" rel="noopener">+91 94817 40319</a>.
+          We will acknowledge every request within 48 hours.
+        </p>
+      </div>
+      <p class="footer-copy">© 2026 Shastri Financial Services. All rights reserved.</p>
+    </div>
+  </div>
+</footer>
+
+<!-- JavaScript -->
+<script>
+  const navbar = document.getElementById('navbar');
+  const onScroll = () => navbar.classList.toggle('scrolled', window.scrollY > 40);
+  window.addEventListener('scroll', onScroll, { passive: true });
+  onScroll();
+
+  const hamburger = document.getElementById('hamburger');
+  const mobileMenu = document.getElementById('mobileMenu');
+  hamburger.addEventListener('click', () => {
+    const open = mobileMenu.classList.toggle('open');
+    hamburger.classList.toggle('open', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+  });
+  document.querySelectorAll('.mobile-link').forEach(link => {
+    link.addEventListener('click', () => {
+      mobileMenu.classList.remove('open');
+      hamburger.classList.remove('open');
+      document.body.style.overflow = '';
+    });
+  });
+
+  const fadeEls = document.querySelectorAll('.fade-in');
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) { entry.target.classList.add('visible'); observer.unobserve(entry.target); }
+    });
+  }, { threshold: 0.12, rootMargin: '0px 0px -60px 0px' });
+  fadeEls.forEach(el => observer.observe(el));
+
+/* SIP Calculator with donut allocation chart */
+  (function() {
+    const amountEl  = document.getElementById('sipAmount');
+    const yearsEl   = document.getElementById('sipYears');
+    const returnEl  = document.getElementById('sipReturn');
+    const amountVal = document.getElementById('sipAmountVal');
+    const yearsVal  = document.getElementById('sipYearsVal');
+    const returnVal = document.getElementById('sipReturnVal');
+    const corpusEl  = document.getElementById('sipCorpus');
+    const investedEl= document.getElementById('sipInvested');
+    const gainsEl   = document.getElementById('sipGains');
+    const ringInv   = document.getElementById('sipRingInvested');
+    const ringRet   = document.getElementById('sipRingReturns');
+    const multEl    = document.getElementById('sipMultiple');
+    const CIRC = 2 * Math.PI * 52; /* ≈ 326.73 */
+
+    function fmt(n) {
+      if (n >= 1e7) return '₹' + (n/1e7).toFixed(2) + ' Cr';
+      if (n >= 1e5) return '₹' + (n/1e5).toFixed(2) + ' L';
+      return '₹' + Math.round(n).toLocaleString('en-IN');
+    }
+
+    function fillTrack(el) {
+      const pct = ((el.value - el.min) / (el.max - el.min)) * 100;
+      el.style.background = 'linear-gradient(90deg, var(--gold) ' + pct + '%, var(--line) ' + pct + '%)';
+    }
+
+    function calc() {
+      const P = parseInt(amountEl.value, 10);
+      const n = parseInt(yearsEl.value, 10) * 12;
+      const r = parseFloat(returnEl.value) / 100 / 12;
+      const invested = P * n;
+      const corpus = r === 0 ? invested : P * ((Math.pow(1 + r, n) - 1) / r) * (1 + r);
+      const gains = corpus - invested;
+
+      amountVal.textContent = '₹' + P.toLocaleString('en-IN');
+      yearsVal.textContent  = yearsEl.value + (yearsEl.value == 1 ? ' Year' : ' Years');
+      returnVal.textContent = parseFloat(returnEl.value).toFixed(1) + '%';
+      corpusEl.textContent  = fmt(corpus);
+      investedEl.textContent= fmt(invested);
+      gainsEl.textContent   = fmt(gains);
+
+      const invLen = (invested / corpus) * CIRC;
+      const retLen = (gains / corpus) * CIRC;
+      ringInv.setAttribute('stroke-dasharray', invLen + ' ' + (CIRC - invLen));
+      ringRet.setAttribute('stroke-dasharray', retLen + ' ' + (CIRC - retLen));
+      ringRet.setAttribute('stroke-dashoffset', -invLen);
+      multEl.textContent = (corpus / invested).toFixed(1) + 'x';
+
+      [amountEl, yearsEl, returnEl].forEach(fillTrack);
+    }
+
+    [amountEl, yearsEl, returnEl].forEach(el => el.addEventListener('input', calc));
+    calc();
+  })();
+
+  /* Goal-Based Calculator — required monthly SIP for a target corpus */
+  (function() {
+    const targetEl  = document.getElementById('goalTarget');
+    const yearsEl   = document.getElementById('goalYears');
+    const returnEl  = document.getElementById('goalReturn');
+    const targetVal = document.getElementById('goalTargetVal');
+    const yearsVal  = document.getElementById('goalYearsVal');
+    const returnVal = document.getElementById('goalReturnVal');
+    const sipEl     = document.getElementById('goalSip');
+    const investedEl= document.getElementById('goalInvested');
+    const gainsEl   = document.getElementById('goalGains');
+    const ringInv   = document.getElementById('goalRingInvested');
+    const ringRet   = document.getElementById('goalRingReturns');
+    const multEl    = document.getElementById('goalMultiple');
+    if (!targetEl) return;
+    const CIRC = 2 * Math.PI * 52;
+
+    function fmt(n) {
+      if (n >= 1e7) return '₹' + (n/1e7).toFixed(2) + ' Cr';
+      if (n >= 1e5) return '₹' + (n/1e5).toFixed(2) + ' L';
+      return '₹' + Math.round(n).toLocaleString('en-IN');
+    }
+    function fillTrack(el) {
+      const pct = ((el.value - el.min) / (el.max - el.min)) * 100;
+      el.style.background = 'linear-gradient(90deg, var(--gold) ' + pct + '%, var(--line) ' + pct + '%)';
+    }
+    function calc() {
+      const FV = parseInt(targetEl.value, 10);
+      const n  = parseInt(yearsEl.value, 10) * 12;
+      const r  = parseFloat(returnEl.value) / 100 / 12;
+      const factor = r === 0 ? n : ((Math.pow(1 + r, n) - 1) / r) * (1 + r);
+      const P = FV / factor;
+      const invested = P * n;
+      const gains = FV - invested;
+
+      targetVal.textContent = fmt(FV);
+      yearsVal.textContent  = yearsEl.value + (yearsEl.value == 1 ? ' Year' : ' Years');
+      returnVal.textContent = parseFloat(returnEl.value).toFixed(1) + '%';
+      sipEl.textContent     = '₹' + Math.round(P).toLocaleString('en-IN');
+      investedEl.textContent= fmt(invested);
+      gainsEl.textContent   = fmt(gains);
+
+      const invLen = (invested / FV) * CIRC;
+      const retLen = (gains / FV) * CIRC;
+      ringInv.setAttribute('stroke-dasharray', invLen + ' ' + (CIRC - invLen));
+      ringRet.setAttribute('stroke-dasharray', retLen + ' ' + (CIRC - retLen));
+      ringRet.setAttribute('stroke-dashoffset', -invLen);
+      multEl.textContent = (FV / invested).toFixed(1) + 'x';
+
+      [targetEl, yearsEl, returnEl].forEach(fillTrack);
+    }
+    [targetEl, yearsEl, returnEl].forEach(el => el.addEventListener('input', calc));
+    calc();
+  })();
+</script>
+</body>
+</html>

@@ -4,7 +4,7 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Financial Calculators | Shastri Financial Services</title>
-  <meta name="description" content="Free SIP and goal-planning calculators from Shastri Financial Services, AMFI-registered Mutual Fund Distributor (ARN-346031). Illustrative, educational tools." />
+  <meta name="description" content="Free SIP, step-up, lumpsum and goal-planning calculators from Shastri Financial Services, AMFI-registered Mutual Fund Distributor (ARN-346031). Illustrative, educational tools." />
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="apple-touch-icon" href="favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
@@ -17,7 +17,7 @@
     .calc-hero h1 { font-family: var(--serif); font-size: clamp(2rem,4vw,2.9rem); color: var(--ink); line-height:1.15; margin-bottom:14px; letter-spacing:-0.01em; }
     .calc-hero p { color: var(--body); max-width: 580px; margin: 0 auto; line-height:1.7; }
     #calculators { padding: 56px 0 90px; background: var(--bg-alt); }
-    .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px; align-items: start; }
+    .calc-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 48px 76px; align-items: start; }
     .calc-card { background:#fff; border:1px solid var(--line); border-radius: var(--radius); box-shadow: var(--shadow); padding: 34px 32px; position: relative; overflow: hidden; }
     .calc-card::before { content:''; position:absolute; top:0; left:0; right:0; height:4px; background: linear-gradient(90deg,var(--gold),var(--gold2)); }
     .calc-card-head { margin-bottom: 26px; }
@@ -28,7 +28,7 @@
     .calc-card .sip-result { background: none; border: none; box-shadow: none; padding: 0; }
     .calc-card .sip-result::before { display: none; }
     .calc-card .sip-result-value { margin-bottom: 24px; }
-    @media (max-width: 860px) { .calc-grid { grid-template-columns: 1fr; } }
+    @media (max-width: 860px) { .calc-grid { grid-template-columns: 1fr; gap: 32px; } }
   </style>
 </head>
 <body>
@@ -67,7 +67,7 @@
   <div class="container">
     <p class="section-label">Free Tools</p>
     <h1>Financial Calculators</h1>
-    <p>Plan with clarity. Model your SIP and see the monthly investment your goals need. Educational tools, not investment advice.</p>
+    <p>Plan with clarity. Model your investments and see the numbers behind your goals. Educational tools, not investment advice.</p>
   </div>
 </section>
 
@@ -81,18 +81,9 @@
           <p class="calc-card-sub">See how small, disciplined monthly investments compound into wealth over time.</p>
         </div>
         <div class="sip-controls">
-          <div class="sip-control-group">
-            <label for="sipAmount">Monthly SIP Amount <span id="sipAmountVal">₹5,000</span></label>
-            <input type="range" id="sipAmount" min="500" max="100000" step="500" value="5000" />
-          </div>
-          <div class="sip-control-group">
-            <label for="sipYears">Investment Period <span id="sipYearsVal">10 Years</span></label>
-            <input type="range" id="sipYears" min="1" max="30" step="1" value="10" />
-          </div>
-          <div class="sip-control-group">
-            <label for="sipReturn">Expected Annual Return <span id="sipReturnVal">12%</span></label>
-            <input type="range" id="sipReturn" min="6" max="20" step="0.5" value="12" />
-          </div>
+          <div class="sip-control-group"><label for="sipAmount">Monthly SIP Amount <span id="sipAmountVal">₹5,000</span></label><input type="range" id="sipAmount" min="500" max="100000" step="500" value="5000" /></div>
+          <div class="sip-control-group"><label for="sipYears">Investment Period <span id="sipYearsVal">10 Years</span></label><input type="range" id="sipYears" min="1" max="30" step="1" value="10" /></div>
+          <div class="sip-control-group"><label for="sipReturn">Expected Annual Return <span id="sipReturnVal">12%</span></label><input type="range" id="sipReturn" min="6" max="20" step="0.5" value="12" /></div>
         </div>
         <div class="sip-result">
           <div class="sip-result-label">Total Corpus at Maturity</div>
@@ -131,18 +122,9 @@
           <p class="calc-card-sub">Tell me your goal and timeline, and see the monthly SIP that gets you there.</p>
         </div>
         <div class="sip-controls">
-          <div class="sip-control-group">
-            <label for="goalTarget">Target Amount <span id="goalTargetVal">₹50.00 L</span></label>
-            <input type="range" id="goalTarget" min="100000" max="50000000" step="100000" value="5000000" />
-          </div>
-          <div class="sip-control-group">
-            <label for="goalYears">Years to Goal <span id="goalYearsVal">15 Years</span></label>
-            <input type="range" id="goalYears" min="1" max="40" step="1" value="15" />
-          </div>
-          <div class="sip-control-group">
-            <label for="goalReturn">Expected Annual Return <span id="goalReturnVal">12%</span></label>
-            <input type="range" id="goalReturn" min="6" max="20" step="0.5" value="12" />
-          </div>
+          <div class="sip-control-group"><label for="goalTarget">Target Amount <span id="goalTargetVal">₹50.00 L</span></label><input type="range" id="goalTarget" min="100000" max="50000000" step="100000" value="5000000" /></div>
+          <div class="sip-control-group"><label for="goalYears">Years to Goal <span id="goalYearsVal">15 Years</span></label><input type="range" id="goalYears" min="1" max="40" step="1" value="15" /></div>
+          <div class="sip-control-group"><label for="goalReturn">Expected Annual Return <span id="goalReturnVal">12%</span></label><input type="range" id="goalReturn" min="6" max="20" step="0.5" value="12" /></div>
         </div>
         <div class="sip-result">
           <div class="sip-result-label">Monthly SIP Needed</div>
@@ -172,6 +154,89 @@
           </div>
           <a href="index.html#contact" class="btn-primary" style="width:100%; justify-content:center; margin-bottom:16px;">Get a Personalised Plan</a>
           <p class="sip-note">Illustrative only, assuming monthly compounding. Not a guarantee of returns. Mutual Fund investments are subject to market risks.</p>
+        </div>
+      </div>
+      <div class="calc-card fade-in">
+        <div class="calc-card-head">
+          <p class="section-label">Increase Yearly</p>
+          <h2>Step-Up SIP Calculator</h2>
+          <p class="calc-card-sub">Raise your SIP a little each year as your income grows, and see how much more it builds.</p>
+        </div>
+        <div class="sip-controls">
+          <div class="sip-control-group"><label for="suAmount">Starting Monthly SIP <span id="suAmountVal">₹5,000</span></label><input type="range" id="suAmount" min="500" max="100000" step="500" value="5000" /></div>
+          <div class="sip-control-group"><label for="suStep">Annual Step-Up <span id="suStepVal">10% / yr</span></label><input type="range" id="suStep" min="0" max="25" step="1" value="10" /></div>
+          <div class="sip-control-group"><label for="suYears">Investment Period <span id="suYearsVal">10 Years</span></label><input type="range" id="suYears" min="1" max="30" step="1" value="10" /></div>
+          <div class="sip-control-group"><label for="suReturn">Expected Annual Return <span id="suReturnVal">12%</span></label><input type="range" id="suReturn" min="6" max="20" step="0.5" value="12" /></div>
+        </div>
+        <div class="sip-result">
+          <div class="sip-result-label">Total Corpus at Maturity</div>
+          <div class="sip-result-value" id="suCorpus">₹15.00 L</div>
+          <div class="sip-donut-wrap">
+            <div class="sip-donut">
+              <svg width="130" height="130" viewBox="0 0 130 130">
+                <circle cx="65" cy="65" r="52" fill="none" stroke="#ECE8DA" stroke-width="18"/>
+                <circle id="suRingInvested" class="sip-donut-ring" cx="65" cy="65" r="52" fill="none" stroke="#2C3037" stroke-width="18" stroke-linecap="butt" stroke-dasharray="0 327"/>
+                <circle id="suRingReturns" class="sip-donut-ring" cx="65" cy="65" r="52" fill="none" stroke="#F5822E" stroke-width="18" stroke-linecap="butt" stroke-dasharray="0 327" stroke-dashoffset="0"/>
+              </svg>
+              <div class="sip-donut-center">
+                <div class="sip-donut-mult" id="suMultiple">2.0x</div>
+                <div class="sip-donut-multlabel">Growth</div>
+              </div>
+            </div>
+            <div class="sip-legend">
+              <div class="sip-legend-item">
+                <div class="sip-legend-top"><span class="sip-legend-dot" style="background:#2C3037;"></span>Amount Invested</div>
+                <div class="sip-legend-val" id="suInvested">₹9.56 L</div>
+              </div>
+              <div class="sip-legend-item">
+                <div class="sip-legend-top"><span class="sip-legend-dot" style="background:#F5822E;"></span>Wealth Gained</div>
+                <div class="sip-legend-val" id="suGains">₹5.44 L</div>
+              </div>
+            </div>
+          </div>
+          <a href="index.html#contact" class="btn-primary" style="width:100%; justify-content:center; margin-bottom:16px;">Start a Step-Up SIP</a>
+          <p class="sip-note">Assumes monthly compounding with an annual step-up. Not a guarantee of returns. Mutual Fund investments are subject to market risks.</p>
+        </div>
+      </div>
+      <div class="calc-card fade-in">
+        <div class="calc-card-head">
+          <p class="section-label">One-Time</p>
+          <h2>Lumpsum Calculator</h2>
+          <p class="calc-card-sub">See how a single one-time investment grows over the years.</p>
+        </div>
+        <div class="sip-controls">
+          <div class="sip-control-group"><label for="lsAmount">Investment Amount <span id="lsAmountVal">₹1.00 L</span></label><input type="range" id="lsAmount" min="10000" max="10000000" step="10000" value="100000" /></div>
+          <div class="sip-control-group"><label for="lsYears">Investment Period <span id="lsYearsVal">10 Years</span></label><input type="range" id="lsYears" min="1" max="30" step="1" value="10" /></div>
+          <div class="sip-control-group"><label for="lsReturn">Expected Annual Return <span id="lsReturnVal">12%</span></label><input type="range" id="lsReturn" min="6" max="20" step="0.5" value="12" /></div>
+        </div>
+        <div class="sip-result">
+          <div class="sip-result-label">Value at Maturity</div>
+          <div class="sip-result-value" id="lsCorpus">₹3.11 L</div>
+          <div class="sip-donut-wrap">
+            <div class="sip-donut">
+              <svg width="130" height="130" viewBox="0 0 130 130">
+                <circle cx="65" cy="65" r="52" fill="none" stroke="#ECE8DA" stroke-width="18"/>
+                <circle id="lsRingInvested" class="sip-donut-ring" cx="65" cy="65" r="52" fill="none" stroke="#2C3037" stroke-width="18" stroke-linecap="butt" stroke-dasharray="0 327"/>
+                <circle id="lsRingReturns" class="sip-donut-ring" cx="65" cy="65" r="52" fill="none" stroke="#F5822E" stroke-width="18" stroke-linecap="butt" stroke-dasharray="0 327" stroke-dashoffset="0"/>
+              </svg>
+              <div class="sip-donut-center">
+                <div class="sip-donut-mult" id="lsMultiple">3.1x</div>
+                <div class="sip-donut-multlabel">Growth</div>
+              </div>
+            </div>
+            <div class="sip-legend">
+              <div class="sip-legend-item">
+                <div class="sip-legend-top"><span class="sip-legend-dot" style="background:#2C3037;"></span>Amount Invested</div>
+                <div class="sip-legend-val" id="lsInvested">₹1.00 L</div>
+              </div>
+              <div class="sip-legend-item">
+                <div class="sip-legend-top"><span class="sip-legend-dot" style="background:#F5822E;"></span>Wealth Gained</div>
+                <div class="sip-legend-val" id="lsGains">₹2.11 L</div>
+              </div>
+            </div>
+          </div>
+          <a href="index.html#contact" class="btn-primary" style="width:100%; justify-content:center; margin-bottom:16px;">Invest a Lumpsum</a>
+          <p class="sip-note">Assumes annual compounding. Not a guarantee of returns. Mutual Fund investments are subject to market risks.</p>
         </div>
       </div>
     </div>
@@ -364,6 +429,59 @@
     }
     [targetEl, yearsEl, returnEl].forEach(el => el.addEventListener('input', calc));
     calc();
+  })();
+
+  /* Step-Up SIP Calculator */
+  (function() {
+    const $ = id => document.getElementById(id);
+    const A=$('suAmount'), S=$('suStep'), Y=$('suYears'), R=$('suReturn');
+    if (!A) return;
+    const C = 2 * Math.PI * 52;
+    const fmt = n => n>=1e7 ? '₹'+(n/1e7).toFixed(2)+' Cr' : n>=1e5 ? '₹'+(n/1e5).toFixed(2)+' L' : '₹'+Math.round(n).toLocaleString('en-IN');
+    const fill = el => { const p=((el.value-el.min)/(el.max-el.min))*100; el.style.background='linear-gradient(90deg, var(--gold) '+p+'%, var(--line) '+p+'%)'; };
+    function calc() {
+      const P0=+A.value, g=(+S.value)/100, yrs=+Y.value, r=(+R.value)/100/12;
+      let total=0, invested=0, sip=P0;
+      for (let y=0;y<yrs;y++){ for(let m=0;m<12;m++){ total=(total+sip)*(1+r); invested+=sip; } sip*=(1+g); }
+      const gains=total-invested;
+      $('suAmountVal').textContent='₹'+P0.toLocaleString('en-IN');
+      $('suStepVal').textContent=S.value+'% / yr';
+      $('suYearsVal').textContent=Y.value+(Y.value==1?' Year':' Years');
+      $('suReturnVal').textContent=(+R.value).toFixed(1)+'%';
+      $('suCorpus').textContent=fmt(total); $('suInvested').textContent=fmt(invested); $('suGains').textContent=fmt(gains);
+      const il=(invested/total)*C, gl=(gains/total)*C;
+      $('suRingInvested').setAttribute('stroke-dasharray', il+' '+(C-il));
+      $('suRingReturns').setAttribute('stroke-dasharray', gl+' '+(C-gl));
+      $('suRingReturns').setAttribute('stroke-dashoffset', -il);
+      $('suMultiple').textContent=(total/invested).toFixed(1)+'x';
+      [A,S,Y,R].forEach(fill);
+    }
+    [A,S,Y,R].forEach(e=>e.addEventListener('input',calc)); calc();
+  })();
+
+  /* Lumpsum Calculator */
+  (function() {
+    const $ = id => document.getElementById(id);
+    const A=$('lsAmount'), Y=$('lsYears'), R=$('lsReturn');
+    if (!A) return;
+    const C = 2 * Math.PI * 52;
+    const fmt = n => n>=1e7 ? '₹'+(n/1e7).toFixed(2)+' Cr' : n>=1e5 ? '₹'+(n/1e5).toFixed(2)+' L' : '₹'+Math.round(n).toLocaleString('en-IN');
+    const fill = el => { const p=((el.value-el.min)/(el.max-el.min))*100; el.style.background='linear-gradient(90deg, var(--gold) '+p+'%, var(--line) '+p+'%)'; };
+    function calc() {
+      const P=+A.value, yrs=+Y.value, rate=(+R.value)/100;
+      const FV=P*Math.pow(1+rate,yrs); const gains=FV-P;
+      $('lsAmountVal').textContent=fmt(P);
+      $('lsYearsVal').textContent=Y.value+(Y.value==1?' Year':' Years');
+      $('lsReturnVal').textContent=(+R.value).toFixed(1)+'%';
+      $('lsCorpus').textContent=fmt(FV); $('lsInvested').textContent=fmt(P); $('lsGains').textContent=fmt(gains);
+      const il=(P/FV)*C, gl=(gains/FV)*C;
+      $('lsRingInvested').setAttribute('stroke-dasharray', il+' '+(C-il));
+      $('lsRingReturns').setAttribute('stroke-dasharray', gl+' '+(C-gl));
+      $('lsRingReturns').setAttribute('stroke-dashoffset', -il);
+      $('lsMultiple').textContent=(FV/P).toFixed(1)+'x';
+      [A,Y,R].forEach(fill);
+    }
+    [A,Y,R].forEach(e=>e.addEventListener('input',calc)); calc();
   })();
 </script>
 </body>

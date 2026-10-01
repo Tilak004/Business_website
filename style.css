@@ -645,3 +645,6 @@
     .article-disclaimer { font-size:0.78rem; color:var(--muted); line-height:1.7; border-top:1px solid var(--line); padding-top:20px; margin-top:34px; }
     .article-back { display:inline-flex; align-items:center; gap:8px; color:var(--gold); text-decoration:none; font-weight:600; font-size:0.9rem; }
     .article-back:hover { text-decoration:underline; }
+    .article-body ul.article-list { margin: 2px 0 18px; padding-left: 22px; }
+    .article-body ul.article-list li { color: var(--body); line-height: 1.8; margin-bottom: 8px; font-size: 1.02rem; }
+    .article-body ul.article-list li::marker { color: var(--gold); }

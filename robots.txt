@@ -1,5 +1,4 @@
 User-agent: *
 Allow: /
 
-# Sitemap will be added once the custom domain is live:
-# Sitemap: https://your-domain/sitemap.xml
+Sitemap: https://shastriwealth.in/sitemap.xml

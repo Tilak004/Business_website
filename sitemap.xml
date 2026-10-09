@@ -2,7 +2,8 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url><loc>https://shastriwealth.in/</loc><lastmod>2026-10-09</lastmod><priority>1.0</priority></url>
   <url><loc>https://shastriwealth.in/calculators.html</loc><lastmod>2026-10-09</lastmod><priority>0.8</priority></url>
-  <url><loc>https://shastriwealth.in/insights.html</loc><lastmod>2026-10-09</lastmod><priority>0.8</priority></url>
+  <url><loc>https://shastriwealth.in/learn.html</loc><lastmod>2026-10-09</lastmod><priority>0.8</priority></url>
+  <url><loc>https://shastriwealth.in/research.html</loc><lastmod>2026-10-09</lastmod><priority>0.7</priority></url>
   <url><loc>https://shastriwealth.in/learn-behaviour-gap.html</loc><lastmod>2026-10-09</lastmod><priority>0.6</priority></url>
   <url><loc>https://shastriwealth.in/learn-sip-vs-timing.html</loc><lastmod>2026-10-09</lastmod><priority>0.6</priority></url>
   <url><loc>https://shastriwealth.in/learn-costs.html</loc><lastmod>2026-10-09</lastmod><priority>0.6</priority></url>
@@ -10,4 +11,10 @@
   <url><loc>https://shastriwealth.in/learn-tax-saving.html</loc><lastmod>2026-10-09</lastmod><priority>0.6</priority></url>
   <url><loc>https://shastriwealth.in/learn-goal-based.html</loc><lastmod>2026-10-09</lastmod><priority>0.6</priority></url>
   <url><loc>https://shastriwealth.in/privacy.html</loc><lastmod>2026-10-09</lastmod><priority>0.3</priority></url>
+  <url><loc>https://shastriwealth.in/learn-stock-market.html</loc><lastmod>2026-10-09</lastmod><priority>0.6</priority></url>
+  <url><loc>https://shastriwealth.in/learn-how-mutual-funds-work.html</loc><lastmod>2026-10-09</lastmod><priority>0.6</priority></url>
+  <url><loc>https://shastriwealth.in/learn-equity-vs-debt.html</loc><lastmod>2026-10-09</lastmod><priority>0.6</priority></url>
+  <url><loc>https://shastriwealth.in/learn-risk-volatility.html</loc><lastmod>2026-10-09</lastmod><priority>0.6</priority></url>
+  <url><loc>https://shastriwealth.in/learn-indices.html</loc><lastmod>2026-10-09</lastmod><priority>0.6</priority></url>
+  <url><loc>https://shastriwealth.in/learn-compounding.html</loc><lastmod>2026-10-09</lastmod><priority>0.6</priority></url>
 </urlset>

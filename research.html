@@ -3,14 +3,38 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ELSS, PPF and NPS: a plain comparison for tax saving | Shastri Financial Services</title>
-  <meta name="description" content="A plain, neutral comparison of ELSS, PPF and NPS for Section 80C tax saving, on lock-in, risk and liquidity." />
+  <title>My Research | Shastri Financial Services</title>
+  <meta name="description" content="Personal quant and systematic-investing research by Tilak Chandra Shastri, shared as education: what honest backtesting reveals about costs, survivorship bias and discipline. ARN-346031." />
   <link rel="icon" type="image/png" href="favicon.png" />
   <link rel="apple-touch-icon" href="favicon.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .page-hero { padding: 132px 0 40px; text-align: center; background: linear-gradient(180deg,#FFFFFF 0%,#F4F7FB 100%); }
+    .page-hero .section-label { color: var(--gold); }
+    .page-hero h1 { font-family: var(--serif); font-size: clamp(2rem,4vw,2.9rem); color: var(--ink); line-height:1.15; margin-bottom:16px; letter-spacing:-0.01em; }
+    .page-hero p { color: var(--body); max-width: 660px; margin: 0 auto; line-height:1.85; }
+    .ins-section { padding: 62px 0; }
+    .ins-section.alt { background: var(--bg-alt); }
+    .ins-lead { max-width: 720px; color: var(--body); line-height:1.9; margin-bottom: 22px; font-size:1rem; }
+    .ins-topics { list-style:none; display:grid; grid-template-columns: repeat(auto-fit,minmax(300px,1fr)); gap:12px; margin-top:24px; }
+    .ins-topics li { background:#fff; border:1px solid var(--line); border-radius:10px; padding:15px 18px; font-size:0.92rem; color:var(--ink2); box-shadow:var(--shadow-sm); font-style:italic; font-family:var(--serif); }
+    .find-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(240px,1fr)); gap:20px; margin:30px 0; }
+    .find-card { background:#fff; border:1px solid var(--line); border-left:3px solid var(--gold); border-radius:0 12px 12px 0; padding:22px 24px; box-shadow:var(--shadow-sm); }
+    .find-card h4 { font-family:var(--serif); font-size:1.05rem; color:var(--ink); margin-bottom:8px; }
+    .find-card p { font-size:0.88rem; color:var(--body); line-height:1.7; }
+    .ins-p { max-width:760px; color:var(--body); line-height:1.9; margin-bottom:18px; }
+    .learn-grid { display:grid; grid-template-columns: repeat(auto-fit,minmax(280px,1fr)); gap:24px; margin-top:24px; }
+    .learn-card { background:#fff; border:1px solid var(--line); border-radius:var(--radius); padding:28px 26px; box-shadow:var(--shadow-sm); position:relative; }
+    .learn-badge { display:inline-block; font-size:0.66rem; font-weight:700; letter-spacing:0.1em; text-transform:uppercase; color:var(--gold); background:var(--gold-soft); padding:4px 11px; border-radius:100px; margin-bottom:14px; }
+    .learn-card h3 { font-family:var(--serif); font-size:1.15rem; color:var(--ink); margin-bottom:10px; line-height:1.3; }
+    .learn-card p { font-size:0.9rem; color:var(--body); line-height:1.75; }
+    .learn-group-title { font-family:var(--serif); font-size:1.3rem; color:var(--ink); margin:46px 0 2px; }
+    .ins-disclaimer { font-size:0.76rem; color:var(--muted); line-height:1.75; max-width:780px; margin:0 auto; text-align:center; }
+    .ins-disclaimer strong { color:var(--ink2); font-weight:600; }
+  </style>
 </head>
 <body>
 <nav id="navbar">
@@ -47,38 +71,36 @@
   <a href="index.html#contact" class="mobile-link">Book a Call</a>
 </div>
 
-<section class="article-hero">
+<section class="page-hero">
   <div class="container">
-    <p class="section-label">Insights &middot; Learn</p>
-    <h1>ELSS, PPF and NPS: a plain comparison for tax saving</h1>
+    <p class="section-label">Personal Research</p>
+    <h1>My Research</h1>
+    <p>This is my research corner. Alongside advising clients, I study how systematic, rules-based investing actually behaves once it is tested honestly. I share it here to show my working, not to sell anything.</p>
   </div>
 </section>
 
-<section class="article-body">
+<section class="ins-section">
   <div class="container">
-        <p>When tax season arrives, many investors in India look at Section 80C of the Income Tax Act, which allows certain investments to be deducted from taxable income up to a yearly limit. Three options come up again and again: ELSS, PPF and NPS. They are often discussed together, but they work very differently and suit different needs. This article explains each one factually so you can understand the choices, not to tell you which is "best". None of them is universally better than the others.</p>
-        <h2>What each option is</h2>
-        <p><strong>ELSS (Equity Linked Savings Scheme)</strong> is a type of mutual fund that invests mainly in equities, meaning the stock market. Because it is market-linked, its value can rise or fall with market movements. Among common 80C options, ELSS has the shortest lock-in period, usually three years from the date of each investment.</p>
-        <p><strong>PPF (Public Provident Fund)</strong> is a government-backed small savings scheme. You contribute money and earn interest at a rate declared by the government, which is reviewed and can change over time. The amount you put in is not exposed to the stock market, which makes PPF a very low-risk option. It has a long tenure, typically fifteen years, with options to extend.</p>
-        <p><strong>NPS (National Pension System)</strong> is a retirement-focused scheme. Your contributions are invested across a mix that can include equity and debt, so part of it is market-linked and its value can vary. NPS is designed for long-term retirement savings and is generally locked until you reach retirement age, with only limited partial withdrawals allowed for specific reasons along the way. NPS also offers an additional deduction under Section 80CCD(1B), over and above the main 80C limit, which some investors find useful.</p>
-        <h2>Comparing on lock-in</h2>
-        <p>Lock-in is how long your money must stay invested.</p>
-        <ul class="article-list"><li>ELSS has the shortest lock-in, generally three years.</li><li>PPF has a long lock-in, generally fifteen years, though partial withdrawals become possible after a few years under set rules.</li><li>NPS is effectively locked until retirement, with limited exceptions.</li></ul>
-        <h2>Comparing on risk level</h2>
-        <ul class="article-list"><li>ELSS carries market risk because it is invested in equities; its value can go up and down.</li><li>PPF is very low risk because the money is not market-linked and the interest is government-declared.</li><li>NPS sits in between and depends on the mix you choose; the portion in equity carries market risk, while the portion in debt is steadier.</li></ul>
-        <p>Higher potential for growth generally comes with higher ups and downs, while lower risk generally comes with steadier but more modest, fixed-type returns. This is a trade-off, not a ranking.</p>
-        <h2>Comparing on liquidity</h2>
-        <p>Liquidity is how easily you can access your money.</p>
-        <ul class="article-list"><li>ELSS becomes accessible after the three-year lock-in on each investment.</li><li>PPF allows limited partial withdrawals after a set number of years, with full access near maturity.</li><li>NPS is the least liquid before retirement, since it is built to stay invested for the long term.</li></ul>
-        <h2>Who each may suit, in general terms</h2>
-        <p>These are broad observations, not advice for any individual.</p>
-        <ul class="article-list"><li>ELSS may appeal to someone comfortable with market ups and downs who wants the shortest lock-in among these options and is investing for the medium to long term.</li><li>PPF may appeal to someone who prefers capital safety, is comfortable with a long tenure, and values predictable, government-set interest.</li><li>NPS may appeal to someone specifically saving for retirement who wants the extra 80CCD(1B) deduction and is willing to keep the money locked until then.</li></ul>
-        <p>Many investors use a combination rather than only one, because each serves a different purpose, time horizon and comfort with risk. The right mix depends on your own goals, age, income and how much variation you can tolerate.</p>
-        <h2>A note on tax rules</h2>
-        <p>Tax rules, deduction limits and interest rates can change from year to year, and government-declared rates on PPF and NPS are variable rather than fixed forever. Always check the current limits and rules for the relevant financial year, and consider your own situation, before deciding anything. A qualified tax adviser can help you with specifics.</p>
-        <div class="article-takeaway"><p>Key takeaway: ELSS, PPF and NPS each balance lock-in, risk and liquidity differently, so understanding how they work matters more than searching for a single "best" option.</p></div>
-        <p class="article-disclaimer">This article is educational content only and is not investment advice. Mutual Fund investments are subject to market risks; please read all scheme-related documents carefully. ARN-346031.</p>
-        <p style="margin-top:34px;"><a href="learn.html" class="article-back">&larr; Back to Learn</a></p>
+    <p class="section-label">Quant Research</p>
+    <h2 class="section-title">Rules-Based Investing, Tested Honestly</h2>
+    <div class="gold-line"></div>
+    <p class="ins-p">I run a personal research project studying systematic investing on Indian stocks (NSE). "Systematic" or "rules-based" simply means the decisions follow a fixed set of written rules instead of gut feeling or news headlines: you define in advance what you would buy, when you would sell, and how much risk you would take, then test those rules against many years of past market data. This is a study and a learning exercise, <strong>not a service, a subscription, or a recommendation of any kind.</strong></p>
+    <p class="ins-p">What I find most valuable is not any single result, but how much weaker real-world outcomes become once you test honestly. A backtest on a computer almost always looks better than what an investor would actually experience, for three clear reasons:</p>
+    <div class="find-grid">
+      <div class="find-card"><h4>Survivorship bias</h4><p>Test only the companies that still exist today and you quietly leave out the ones that failed along the way, which flatters the numbers.</p></div>
+      <div class="find-card"><h4>Costs</h4><p>Brokerage, taxes, and the small gap between the price you see and the price you get all chip away at returns. These alone can be the difference between a modest edge and no edge at all.</p></div>
+      <div class="find-card"><h4>Entry timing</h4><p>A strategy can look good assuming you buy at yesterday's close, but in reality you can only act at the next day's open, which is often a little worse.</p></div>
+    </div>
+    <p class="ins-p">None of this is discouraging once you understand it. It is the most useful lesson I can pass on to an ordinary investor. It explains, with evidence, why chasing hot tips and "sure-thing" strategies so often disappoints, and why the boring things quietly win: staying invested, keeping costs low, being patient, and following a plan through good years and bad.</p>
+    <p class="ins-p">That is also why I approach client money the way I do. The same discipline that makes a research strategy survive honest testing (low costs, realistic expectations, a steady process) is what tends to serve real investors well over time. I would rather show you an honest picture with its warts than a polished one that quietly ignores them.</p>
+  </div>
+</section>
+<section class="ins-section alt" style="text-align:center;">
+  <div class="container">
+    <h2 class="section-title" style="margin-bottom:12px;">New to investing?</h2>
+    <p class="ins-lead" style="margin:0 auto 24px;">Start with plain-language basics on the Learn page, or talk to me directly about your goals.</p>
+    <a href="learn.html" class="btn-primary" style="margin-right:10px;">Go to Learn</a>
+    <a href="index.html#contact" class="btn-secondary">Book a Consultation</a>
   </div>
 </section>
 

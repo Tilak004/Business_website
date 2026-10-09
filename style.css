@@ -110,7 +110,7 @@
     .nav-brand span { color: var(--gold); }
     .nav-logo { height: 46px; width: auto; display: block; transition: height var(--transition); }
     #navbar.scrolled .nav-logo { height: 38px; }
-    .nav-links { display: flex; gap: 34px; list-style: none; }
+    .nav-links { display: flex; gap: 26px; list-style: none; }
     .nav-links a {
       font-size: 0.83rem;
       font-weight: 600;

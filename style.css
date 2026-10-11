@@ -665,3 +665,12 @@
     .article-author p { font-size: 0.85rem; color: var(--body); line-height: 1.65; margin: 0; }
     .article-author a { color: var(--gold); text-decoration: none; font-weight: 600; }
     .article-author a:hover { text-decoration: underline; }
+
+    /* Interactive hero chart */
+    .chart-tabs { display: flex; gap: 6px; margin: 2px 0 14px; }
+    .chart-tabs button { flex: 1; font-family: var(--sans); font-size: 0.72rem; font-weight: 600; letter-spacing: 0.04em; padding: 6px 0; border: 1px solid var(--line); background: #fff; color: var(--muted); border-radius: 6px; cursor: pointer; transition: background var(--transition), color var(--transition), border-color var(--transition); }
+    .chart-tabs button:hover { border-color: var(--gold); color: var(--ink2); }
+    .chart-tabs button.active { background: var(--navy); color: #fff; border-color: var(--navy); }
+    .chart-card-badge.muted { color: var(--muted); background: var(--bg-alt); }
+    .chart-line, .chart-area { transition: d 0.5s cubic-bezier(0.4,0,0.2,1); }
+    .chart-dot { transition: cy 0.5s cubic-bezier(0.4,0,0.2,1); }

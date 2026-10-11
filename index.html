@@ -208,16 +208,22 @@
         <div class="chart-card">
           <div class="chart-card-head">
             <div>
-              <div class="chart-card-title">The Power of Compounding</div>
-              <div class="chart-card-value">₹23.2 L</div>
-              <div class="chart-card-sub">₹10,000/month SIP over 10 years @ 12% p.a.</div>
+              <div class="chart-card-title">Short-term noise, long-term growth</div>
+              <div class="chart-card-value" id="chartTf">10 Years</div>
+              <div class="chart-card-sub" id="chartMsg">Over ten years, the day-to-day ups and downs smooth into a clear picture of growth.</div>
             </div>
-            <div class="chart-card-badge">
+            <div class="chart-card-badge" id="chartBadge">
               <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="15 7 21 7 21 13"/></svg>
-              1.9&times;
+              Growth
             </div>
           </div>
-          <svg class="chart-svg" viewBox="0 0 400 210" role="img" aria-label="Illustrative SIP growth curve">
+          <div class="chart-tabs" id="chartTabs" aria-label="Time frame">
+            <button type="button" data-tf="1D">1D</button>
+            <button type="button" data-tf="1M">1M</button>
+            <button type="button" data-tf="1Y">1Y</button>
+            <button type="button" data-tf="10Y" class="active">10Y</button>
+          </div>
+          <svg class="chart-svg" viewBox="0 0 400 210" role="img" aria-label="Illustrative investment journey over different time frames">
             <defs>
               <linearGradient id="areaGrad" x1="0" y1="0" x2="0" y2="1">
                 <stop offset="0%" stop-color="#C9A84C" stop-opacity="0.20"/>
@@ -228,11 +234,11 @@
             <line x1="8" y1="112" x2="392" y2="112" stroke="#EBEFF5" stroke-width="1"/>
             <line x1="8" y1="162" x2="392" y2="162" stroke="#EBEFF5" stroke-width="1"/>
             <line x1="8" y1="196" x2="392" y2="196" stroke="#E2E9F1" stroke-width="1.5"/>
-            <path class="chart-area" d="M8,186 C90,181 150,172 205,156 S335,100 392,34 L392,196 L8,196 Z" fill="url(#areaGrad)"/>
-            <path class="chart-line" d="M8,186 C90,181 150,172 205,156 S335,100 392,34"/>
-            <circle class="chart-dot" cx="392" cy="34" r="4.5"/>
+            <path class="chart-area" id="chartArea" d="M8,186 C90,181 150,172 205,156 S335,100 392,34 L392,196 L8,196 Z" fill="url(#areaGrad)"/>
+            <path class="chart-line" id="chartLine" d="M8,186 C90,181 150,172 205,156 S335,100 392,34"/>
+            <circle class="chart-dot" id="chartDot" cx="392" cy="34" r="4.5"/>
           </svg>
-          <div class="chart-foot"><span>Year 1</span><span>Year 5</span><span>Year 10</span></div>
+          <div class="chart-foot" id="chartFoot"><span>Year 1</span><span>Year 5</span><span>Year 10</span></div>
           <div class="chart-disclaimer">Illustrative only. Mutual Fund investments are subject to market risks.</div>
         </div>
       </div>
@@ -908,6 +914,38 @@
     });
   };
   window.addEventListener('scroll', highlightNav, { passive: true });
+
+  /* Interactive hero chart — short-term noise vs long-term growth */
+  (function() {
+    const tabs = document.getElementById('chartTabs');
+    if (!tabs) return;
+    const line = document.getElementById('chartLine'), area = document.getElementById('chartArea'), dot = document.getElementById('chartDot');
+    const big = document.getElementById('chartTf'), msg = document.getElementById('chartMsg'), badge = document.getElementById('chartBadge'), foot = document.getElementById('chartFoot');
+    const upIcon = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><polyline points="3 17 9 11 13 15 21 7"/><polyline points="15 7 21 7 21 13"/></svg>';
+    const noiseIcon = '<svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"><path d="M3 12h3l2-5 3 10 2.5-7 1.5 4h4"/></svg>';
+    const C = {
+      '1D':  { line: 'M8,116 L28,106 L48,124 L68,104 L88,126 L108,108 L128,128 L150,110 L172,126 L196,106 L220,128 L244,110 L270,124 L296,108 L322,126 L350,112 L392,118', endY: 118, big: '1 Day',   msg: 'Zoom right in and a single day is mostly random noise.',              badge: 'Noise',    up: false, foot: ['9 AM', '12 PM', '3 PM'] },
+      '1M':  { line: 'M8,120 L36,108 L64,132 L92,104 L124,134 L156,110 L192,138 L224,112 L258,132 L296,114 L336,128 L392,116',                                                 endY: 116, big: '1 Month', msg: 'Over a month it is still choppy and hard to read.',                    badge: 'Choppy',   up: false, foot: ['Week 1', 'Week 2', 'Week 4'] },
+      '1Y':  { line: 'M8,150 L40,138 L68,160 L96,128 L128,148 L160,112 L196,140 L228,104 L262,126 L300,92 L340,110 L392,78',                                                   endY: 78,  big: '1 Year',  msg: 'A year has real ups and downs, with only a gentle drift.',             badge: 'Volatile', up: false, foot: ['Q1', 'Q2', 'Q4'] },
+      '10Y': { line: 'M8,186 C90,181 150,172 205,156 S335,100 392,34',                                                                                                         endY: 34,  big: '10 Years', msg: 'Over ten years, the day-to-day ups and downs smooth into a clear picture of growth.', badge: 'Growth', up: true, foot: ['Year 1', 'Year 5', 'Year 10'] }
+    };
+    function set(tf) {
+      const d = C[tf]; if (!d) return;
+      line.setAttribute('d', d.line);
+      area.setAttribute('d', d.line + ' L392,196 L8,196 Z');
+      dot.setAttribute('cy', d.endY);
+      big.textContent = d.big;
+      msg.textContent = d.msg;
+      badge.className = 'chart-card-badge' + (d.up ? '' : ' muted');
+      badge.innerHTML = (d.up ? upIcon : noiseIcon) + ' ' + d.badge;
+      foot.innerHTML = d.foot.map(function(f) { return '<span>' + f + '</span>'; }).join('');
+      for (let i = 0; i < tabs.children.length; i++) {
+        tabs.children[i].classList.toggle('active', tabs.children[i].getAttribute('data-tf') === tf);
+      }
+    }
+    tabs.addEventListener('click', function(e) { const tf = e.target.getAttribute('data-tf'); if (tf) set(tf); });
+    set('10Y');
+  })();
 </script>
 </body>
 </html>

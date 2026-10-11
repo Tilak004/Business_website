@@ -669,5 +669,6 @@
     .chart-tabs button:hover { border-color: var(--gold); color: var(--ink2); }
     .chart-tabs button.active { background: var(--navy); color: #fff; border-color: var(--navy); }
     .chart-card-badge.muted { color: var(--muted); background: var(--bg-alt); }
+    .chart-card-badge.down { color: #C0392B; background: rgba(192,57,43,0.10); }
     .chart-line, .chart-area { transition: d 0.5s cubic-bezier(0.4,0,0.2,1); }
     .chart-dot { transition: cy 0.5s cubic-bezier(0.4,0,0.2,1); }

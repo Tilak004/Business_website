@@ -655,3 +655,13 @@
     .article-body ul.article-list { margin: 2px 0 18px; padding-left: 22px; }
     .article-body ul.article-list li { color: var(--body); line-height: 1.8; margin-bottom: 8px; font-size: 1.02rem; }
     .article-body ul.article-list li::marker { color: var(--gold); }
+    .article-byline { font-size: 0.84rem; color: var(--muted); margin-top: 10px; }
+    .article-byline strong { color: var(--ink2); font-weight: 600; }
+    .article-tldr { background: var(--bg-alt); border: 1px solid var(--line); border-left: 3px solid var(--gold); border-radius: 0 10px 10px 0; padding: 15px 20px; font-size: 0.97rem; color: var(--ink2); margin: 0 0 30px; line-height: 1.65; }
+    .article-tldr strong { color: var(--ink); }
+    .article-author { display: flex; gap: 16px; align-items: flex-start; background: #fff; border: 1px solid var(--line); border-radius: var(--radius); padding: 22px 24px; margin: 40px 0 0; box-shadow: var(--shadow-sm); }
+    .article-author .aa-avatar { width: 52px; height: 52px; border-radius: 50%; background: linear-gradient(135deg, var(--gold2), var(--gold)); color: #fff; font-family: var(--serif); font-weight: 700; display: flex; align-items: center; justify-content: center; font-size: 1.1rem; flex-shrink: 0; }
+    .article-author h4 { font-family: var(--serif); font-size: 1.05rem; color: var(--ink); margin-bottom: 4px; }
+    .article-author p { font-size: 0.85rem; color: var(--body); line-height: 1.65; margin: 0; }
+    .article-author a { color: var(--gold); text-decoration: none; font-weight: 600; }
+    .article-author a:hover { text-decoration: underline; }

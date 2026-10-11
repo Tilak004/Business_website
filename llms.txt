@@ -1,0 +1,33 @@
+# Shastri Financial Services
+> Independent, AMFI-registered Mutual Fund Distributor (ARN-346031) in India, run by Tilak Chandra Shastri. Goal-based wealth management, SIP planning, and plain-language investor education. Education-only content; not investment advice. Mutual fund investments are subject to market risks.
+
+## Core pages
+- Home: https://shastriwealth.in/
+- Financial calculators (SIP, goal planner, step-up SIP, lumpsum): https://shastriwealth.in/calculators.html
+- Learn (investor education hub, 19 articles): https://shastriwealth.in/learn.html
+- Research (personal quant / systematic-investing study): https://shastriwealth.in/research.html
+- Privacy policy: https://shastriwealth.in/privacy.html
+
+## Learn articles
+- What is the stock market and how it works: https://shastriwealth.in/learn-stock-market.html
+- How mutual funds work: https://shastriwealth.in/learn-how-mutual-funds-work.html
+- Nifty and Sensex: what indices mean: https://shastriwealth.in/learn-indices.html
+- How to start your first SIP: https://shastriwealth.in/learn-first-sip.html
+- Why saving comes before investing: https://shastriwealth.in/learn-save-first.html
+- How to be wealthy, not just look wealthy: https://shastriwealth.in/learn-be-wealthy.html
+- Goal-based investing explained: https://shastriwealth.in/learn-goal-based.html
+- Equity vs debt: https://shastriwealth.in/learn-equity-vs-debt.html
+- Risk and volatility: https://shastriwealth.in/learn-risk-volatility.html
+- The power of compounding: https://shastriwealth.in/learn-compounding.html
+- Why costs quietly decide your returns: https://shastriwealth.in/learn-costs.html
+- Trading, investing and speculation (and tax): https://shastriwealth.in/learn-trading-investing-speculation.html
+- What are blue chip companies: https://shastriwealth.in/learn-blue-chip.html
+- Avoiding the penny stock trap: https://shastriwealth.in/learn-penny-stocks.html
+- The basics of valuing a business: https://shastriwealth.in/learn-valuation.html
+- A short history of the Indian stock market: https://shastriwealth.in/learn-indian-market-history.html
+- Why most investors underperform their own funds: https://shastriwealth.in/learn-behaviour-gap.html
+- SIP vs timing the market: https://shastriwealth.in/learn-sip-vs-timing.html
+- ELSS, PPF and NPS compared: https://shastriwealth.in/learn-tax-saving.html
+
+## Contact
+Email: shastritilak880@gmail.com | Call / WhatsApp: +91 94817 40319 | AMFI ARN-346031 | India (pan-India)

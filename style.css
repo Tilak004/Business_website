@@ -428,8 +428,9 @@
     .author-avatar {
       width: 46px; height: 46px; border-radius: 50%;
       background: linear-gradient(135deg, var(--gold2), var(--gold)); display: flex; align-items: center; justify-content: center;
-      font-family: var(--serif); font-size: 1rem; font-weight: 700; color: #fff; flex-shrink: 0;
+      font-family: var(--serif); font-size: 1rem; font-weight: 700; color: #fff; flex-shrink: 0; overflow: hidden;
     }
+    .author-avatar img { width: 100%; height: 100%; object-fit: cover; border-radius: 50%; display: block; }
     .author-name { font-weight: 600; font-size: 0.92rem; color: var(--ink); }
     .author-loc { font-size: 0.78rem; color: var(--muted); margin-top: 2px; }
 

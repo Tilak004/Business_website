@@ -403,13 +403,13 @@
     .amc-track:hover { animation-play-state: paused; }
     @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
     .amc-chip {
-      flex-shrink: 0; display: flex; align-items: center; gap: 9px; padding: 11px 22px;
-      background: #fff; border: 1px solid var(--line); border-radius: 100px; white-space: nowrap; box-shadow: var(--shadow-sm);
-      transition: border-color var(--transition), transform var(--transition);
+      flex-shrink: 0; display: flex; align-items: center; justify-content: center; overflow: hidden;
+      background: #fff; border: 1px solid var(--line); border-radius: 14px; box-shadow: var(--shadow-sm);
+      transition: border-color var(--transition), transform var(--transition), box-shadow var(--transition);
     }
-    .amc-chip:hover { border-color: rgba(176,135,43,0.4); transform: translateY(-2px); }
-    .amc-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--gold); flex-shrink: 0; }
-    .amc-chip span { font-size: 0.82rem; font-weight: 600; letter-spacing: 0.02em; color: var(--ink2); }
+    .amc-chip:hover { border-color: rgba(176,135,43,0.4); transform: translateY(-2px); box-shadow: var(--shadow); }
+    .amc-chip img { height: 56px; width: auto; display: block; }
+    @media (max-width: 640px) { .amc-chip img { height: 46px; } }
 
     /* ─── Testimonials ──────────────────────────────────────────── */
     #testimonials { background: var(--bg-alt); }

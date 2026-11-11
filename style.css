@@ -676,6 +676,13 @@
     .article-author p { font-size: 0.85rem; color: var(--body); line-height: 1.65; margin: 0; }
     .article-author a { color: var(--gold); text-decoration: none; font-weight: 600; }
     .article-author a:hover { text-decoration: underline; }
+    .article-related { margin: 44px 0 0; border-top: 1px solid var(--line); padding-top: 26px; }
+    .article-related h3 { font-family: var(--serif); font-size: 1.15rem; color: var(--ink); margin: 0 0 16px; }
+    .article-related ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 10px; }
+    .article-related li { display: flex; gap: 10px; }
+    .article-related li::before { content: "\2192"; color: var(--gold); font-weight: 700; flex-shrink: 0; }
+    .article-related a { color: var(--ink2); text-decoration: none; font-size: 0.98rem; line-height: 1.5; font-weight: 500; transition: color var(--transition); }
+    .article-related a:hover { color: var(--gold); text-decoration: underline; }
 
     /* Interactive hero chart */
     .chart-tabs { display: flex; gap: 6px; margin: 2px 0 14px; }
